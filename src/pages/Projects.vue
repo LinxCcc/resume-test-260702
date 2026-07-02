@@ -35,11 +35,13 @@
         :key="project.title"
         class="project-item"
         :class="{ active: activeProjectIndex === index }"
-        @click="toggleProject(index)"
-      >
-        <div class="project-index">
+        @click="toggleProject(index)">
+
+
+        <!-- 项目编号不需要 -->
+        <!-- <div class="project-index">
           {{ formatIndex(index + 1) }}
-        </div>
+        </div> -->
 
         <div class="project-visual" :style="{ background: project.cover }">
           <div class="browser-card">
@@ -107,6 +109,16 @@
     </section>
   </main>
 </template>
+
+
+
+
+
+
+
+
+
+
 
 <script setup>
 import { ref } from 'vue'
