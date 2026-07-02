@@ -19,23 +19,24 @@
     </section>
 
     <section class="card contact-card">
-      <button
+        <button
         v-for="item in contactItems"
         :key="item.label"
         class="contact-row"
+        :class="{ copied: copiedLabel === item.label }"
         type="button"
         @click="copyText(item.value, item.label)"
-      >
+        >
         <span class="contact-icon">{{ item.icon }}</span>
         <p>{{ item.value }}</p>
-        <i>⧉</i>
-      </button>
+        <i>{{ copiedLabel === item.label ? '✓' : '⧉' }}</i>
+        </button>
 
         <button class="resume-action" type="button" @click="handleResumeDownload">
         <span class="resume-icon">⇩</span>
         <span class="resume-text">
             <strong>Download Resume</strong>
-            <em>PDF version · Coming soon</em>
+            <em>PDF version · Tap to download</em>
         </span>
         <i>→</i>
         </button>
@@ -147,6 +148,7 @@ import {
 } from '../data/resume'
 
 const toastText = ref('')
+const copiedLabel = ref('')
 
 const contactItems = [
   {
@@ -192,8 +194,21 @@ const contactItems = [
     message: 'Resume download is coming soon'
   }
 ] */
+const RESUME_FILE = '/resume.pdf'
+
 const handleResumeDownload = () => {
-  showToast('Resume download is coming soon')
+  const link = document.createElement('a')
+
+  link.href = RESUME_FILE
+
+  /* 下载的PDF文件名 */
+  link.download = 'Alex-Carter-Resume.pdf'
+
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+
+  showToast('Resume download started')
 }
 
 
@@ -210,7 +225,14 @@ const showToast = (text) => {
 const copyText = async (value, label) => {
   try {
     await navigator.clipboard.writeText(value)
+
+    copiedLabel.value = label
     showToast(`${label} copied`)
+
+    window.clearTimeout(copyText.timer)
+    copyText.timer = window.setTimeout(() => {
+      copiedLabel.value = ''
+    }, 1600)
   } catch {
     showToast('Copy failed')
   }

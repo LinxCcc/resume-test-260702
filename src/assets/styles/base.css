@@ -1125,10 +1125,11 @@ button {
 .project-total strong {
   font-size: 20px;
   line-height: 1;
+  margin-top: 5px;
 }
 
 .project-total span {
-  margin-top: 4px;
+  margin-top: -15px;
   font-size: 10px;
   opacity: 0.78;
 }
@@ -1473,10 +1474,11 @@ button {
 .more-total strong {
   font-size: 20px;
   line-height: 1;
+  margin-top: 5px;
 }
 
 .more-total span {
-  margin-top: 4px;
+  margin-top: -15px;
   font-size: 10px;
   opacity: 0.78;
 }
@@ -2096,4 +2098,34 @@ button {
     padding-left: 14px;
     padding-right: 14px;
   }
+}
+
+
+/* Contact copy success state */
+
+.contact-row.copied {
+  background: #edf5ff;
+}
+
+.contact-row.copied .contact-icon {
+  color: #ffffff;
+  background: var(--blue);
+  box-shadow: 0 10px 22px rgba(15, 107, 255, 0.22);
+}
+
+.contact-row.copied p {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.contact-row.copied i {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 900;
+  background: var(--blue);
 }
