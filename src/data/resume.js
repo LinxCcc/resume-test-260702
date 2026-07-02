@@ -1,3 +1,5 @@
+
+/* 关于我 */
 export const profile = {
   name: 'Alex Carter',
   role: 'Product Manager',
@@ -13,6 +15,14 @@ export const profile = {
   resume: 'Resume'
 }
 
+
+
+
+
+
+
+
+/* 技能标签 */
 export const skills = [
   'Product Strategy',
   'PRD Writing',
@@ -28,12 +38,31 @@ export const skills = [
   'Notion'
 ]
 
+
+
+
+
+
+
+
+
+/* 证书 */
 export const certificates = [
   'PMP Foundation Certificate',
   'Data Analysis for Product Managers',
   'UX Research Practice Certificate'
 ]
 
+
+
+
+
+
+
+
+
+
+/* 时间线 */
 export const experiences = [
   {
     period: '2022.07 - Present',
@@ -58,6 +87,14 @@ export const experiences = [
   }
 ]
 
+
+
+
+
+
+
+
+/* 求职期望 */
 export const jobExpectations = [
   {
     label: 'Target Role',
@@ -73,10 +110,19 @@ export const jobExpectations = [
   },
   {
     label: 'Salary',
-    value: '25K - 35K'
+    value: '00K - 99K'
   }
 ]
 
+
+
+
+
+
+
+
+
+/* 项目经历 */
 export const projects = [
   {
     title: 'Enterprise Data Hub',
@@ -148,6 +194,17 @@ export const projects = [
   }
 ]
 
+
+
+
+
+
+
+
+
+
+
+/* 更多 */
 export const works = [
   {
     title: 'Smart Home App Design',

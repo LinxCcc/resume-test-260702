@@ -6,6 +6,7 @@
       <div class="hero-content">
         <div class="avatar-card">
           <div class="avatar-glow"></div>
+          <div class="avatar-ring"></div>
           <div class="avatar-text">AC</div>
         </div>
 
@@ -18,50 +19,31 @@
     </section>
 
     <section class="card contact-card">
-      <div class="contact-row">
-        <span>☎</span>
-        <p>{{ profile.phone }}</p>
-        <button type="button">⧉</button>
-      </div>
+      <button
+        v-for="item in contactItems"
+        :key="item.label"
+        class="contact-row"
+        type="button"
+        @click="copyText(item.value, item.label)"
+      >
+        <span class="contact-icon">{{ item.icon }}</span>
+        <p>{{ item.value }}</p>
+        <i>⧉</i>
+      </button>
 
-      <div class="contact-row">
-        <span>✉</span>
-        <p>{{ profile.email }}</p>
-        <button type="button">⧉</button>
-      </div>
-
-      <div class="contact-row">
-        <span>⌖</span>
-        <p>{{ profile.location }}</p>
-        <button type="button">⧉</button>
-      </div>
-
-      <div class="quick-actions">
-        <button type="button">
-          <strong>▣</strong>
-          <span>{{ profile.portfolio }}</span>
+        <button class="resume-action" type="button" @click="handleResumeDownload">
+        <span class="resume-icon">⇩</span>
+        <span class="resume-text">
+            <strong>Download Resume</strong>
+            <em>PDF version · Coming soon</em>
+        </span>
+        <i>→</i>
         </button>
-
-        <button type="button">
-          <strong>◉</strong>
-          <span>{{ profile.github }}</span>
-        </button>
-
-        <button type="button">
-          <strong>in</strong>
-          <span>{{ profile.linkedin }}</span>
-        </button>
-
-        <button type="button">
-          <strong>⇩</strong>
-          <span>{{ profile.resume }}</span>
-        </button>
-      </div>
     </section>
 
-    <section class="card section-card">
+    <section class="card section-card about-card">
       <div class="section-title">
-        <h2>个人简介</h2>
+        <h2>Desc</h2>
         <span>♟</span>
       </div>
 
@@ -70,7 +52,7 @@
 
     <section class="card section-card">
       <div class="section-title">
-        <h2>核心技能</h2>
+        <h2>Skills</h2>
         <span>✦</span>
       </div>
 
@@ -83,7 +65,7 @@
 
     <section class="card section-card">
       <div class="section-title">
-        <h2>个人证书</h2>
+        <h2>Certificate</h2>
         <span>✓</span>
       </div>
 
@@ -96,7 +78,7 @@
 
     <section class="card section-card">
       <div class="section-title">
-        <h2>工作经历</h2>
+        <h2>Timeline</h2>
         <span>▣</span>
       </div>
 
@@ -126,7 +108,7 @@
 
     <section class="card section-card">
       <div class="section-title">
-        <h2>求职期望</h2>
+        <h2>Job Goal</h2>
         <span>▤</span>
       </div>
 
@@ -141,10 +123,21 @@
         </div>
       </div>
     </section>
+
+    <Transition name="toast-fade">
+      <div v-if="toastText" class="toast">
+        {{ toastText }}
+      </div>
+    </Transition>
   </main>
 </template>
 
+
+
+
+
 <script setup>
+import { ref } from 'vue'
 import {
   profile,
   skills,
@@ -152,4 +145,83 @@ import {
   experiences,
   jobExpectations
 } from '../data/resume'
+
+const toastText = ref('')
+
+const contactItems = [
+  {
+    label: 'Phone',
+    icon: '☎',
+    value: profile.phone
+  },
+  {
+    label: 'Email',
+    icon: '✉',
+    value: profile.email
+  },
+  {
+    label: 'Location',
+    icon: '⌖',
+    value: profile.location
+  }
+]
+
+/* const quickActions = [
+  {
+    label: profile.portfolio,
+    icon: '▣',
+    type: 'toast',
+    message: 'Portfolio is coming soon'
+  },
+  {
+    label: profile.github,
+    icon: '◉',
+    type: 'link',
+    url: 'https://github.com/'
+  },
+  {
+    label: profile.linkedin,
+    icon: 'in',
+    type: 'link',
+    url: 'https://www.linkedin.com/'
+  },
+  {
+    label: profile.resume,
+    icon: '⇩',
+    type: 'toast',
+    message: 'Resume download is coming soon'
+  }
+] */
+const handleResumeDownload = () => {
+  showToast('Resume download is coming soon')
+}
+
+
+
+const showToast = (text) => {
+  toastText.value = text
+
+  window.clearTimeout(showToast.timer)
+  showToast.timer = window.setTimeout(() => {
+    toastText.value = ''
+  }, 1800)
+}
+
+const copyText = async (value, label) => {
+  try {
+    await navigator.clipboard.writeText(value)
+    showToast(`${label} copied`)
+  } catch {
+    showToast('Copy failed')
+  }
+}
+
+const handleQuickAction = (item) => {
+  if (item.type === 'link') {
+    window.open(item.url, '_blank')
+    return
+  }
+
+  showToast(item.message)
+}
 </script>

@@ -7,8 +7,11 @@
       class="nav-item"
       active-class="active"
     >
-      <span class="nav-icon">{{ item.icon }}</span>
-      <span>{{ item.label }}</span>
+      <span class="nav-icon" :class="item.iconClass">
+        <i></i>
+      </span>
+
+      <span class="nav-label">{{ item.label }}</span>
     </RouterLink>
   </nav>
 </template>
@@ -18,17 +21,17 @@ const navs = [
   {
     label: 'AboutMe',
     path: '/about',
-    icon: '●'
+    iconClass: 'icon-about'
   },
   {
     label: 'Experience',
     path: '/projects',
-    icon: '◆'
+    iconClass: 'icon-projects'
   },
   {
     label: 'More',
     path: '/more',
-    icon: '•••'
+    iconClass: 'icon-more'
   }
 ]
 </script>
