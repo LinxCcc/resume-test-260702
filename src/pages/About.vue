@@ -6,8 +6,11 @@
       <div class="hero-content">
         <div class="avatar-card">
           <div class="avatar-glow"></div>
-          <div class="avatar-ring"></div>
-          <div class="avatar-text">AC</div>
+          <img
+            class="avatar-image"
+            src="../assets/avatar.png"
+            :alt="`${profile.name} avatar`"
+          >
         </div>
 
         <div class="hero-info">
@@ -27,13 +30,20 @@
         type="button"
         @click="copyText(item.value, item.label)"
         >
-        <span class="contact-icon">{{ item.icon }}</span>
+        <span class="contact-icon">
+          <BaseIcon :name="item.icon" />
+        </span>
         <p>{{ item.value }}</p>
-        <i>{{ copiedLabel === item.label ? '✓' : '⧉' }}</i>
+        <BaseIcon
+          class="contact-copy-icon"
+          :name="copiedLabel === item.label ? 'check' : 'copy'"
+        />
         </button>
 
         <button class="resume-action" type="button" @click="handleResumeDownload">
-        <span class="resume-icon">⇩</span>
+        <span class="resume-icon">
+          <BaseIcon name="download" />
+        </span>
         <span class="resume-text">
             <strong>Download Resume</strong>
             <em>PDF version · Tap to download</em>
@@ -45,7 +55,7 @@
     <section class="card section-card about-card">
       <div class="section-title">
         <h2>Desc</h2>
-        <span>♟</span>
+        <span><BaseIcon name="profile" /></span>
       </div>
 
       <p class="intro-text">{{ profile.intro }}</p>
@@ -54,7 +64,7 @@
     <section class="card section-card">
       <div class="section-title">
         <h2>Skills</h2>
-        <span>✦</span>
+        <span><BaseIcon name="sparkles" /></span>
       </div>
 
       <ul class="skill-list">
@@ -67,7 +77,7 @@
     <section class="card section-card">
       <div class="section-title">
         <h2>Certificate</h2>
-        <span>✓</span>
+        <span><BaseIcon name="award" /></span>
       </div>
 
       <div class="certificate-list">
@@ -80,7 +90,7 @@
     <section class="card section-card">
       <div class="section-title">
         <h2>Timeline</h2>
-        <span>▣</span>
+        <span><BaseIcon name="briefcase" /></span>
       </div>
 
       <div class="timeline">
@@ -110,7 +120,7 @@
     <section class="card section-card">
       <div class="section-title">
         <h2>Job Goal</h2>
-        <span>▤</span>
+        <span><BaseIcon name="target" /></span>
       </div>
 
       <div class="expect-list">
@@ -139,6 +149,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import BaseIcon from '../components/common/BaseIcon.vue'
 import {
   profile,
   skills,
@@ -153,17 +164,17 @@ const copiedLabel = ref('')
 const contactItems = [
   {
     label: 'Phone',
-    icon: '☎',
+    icon: 'phone',
     value: profile.phone
   },
   {
     label: 'Email',
-    icon: '✉',
+    icon: 'mail',
     value: profile.email
   },
   {
     label: 'Location',
-    icon: '⌖',
+    icon: 'location',
     value: profile.location
   }
 ]

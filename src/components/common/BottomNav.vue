@@ -7,8 +7,8 @@
       class="nav-item"
       active-class="active"
     >
-      <span class="nav-icon" :class="item.iconClass">
-        <i></i>
+      <span class="nav-icon">
+        <BaseIcon :name="item.icon" />
       </span>
 
       <span class="nav-label">{{ item.label }}</span>
@@ -17,21 +17,23 @@
 </template>
 
 <script setup>
+import BaseIcon from './BaseIcon.vue'
+
 const navs = [
   {
     label: 'AboutMe',
     path: '/about',
-    iconClass: 'icon-about'
+    icon: 'profile'
   },
   {
     label: 'Experience',
     path: '/projects',
-    iconClass: 'icon-projects'
+    icon: 'briefcase'
   },
   {
     label: 'More',
     path: '/more',
-    iconClass: 'icon-more'
+    icon: 'grid'
   }
 ]
 </script>
