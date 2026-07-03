@@ -37,13 +37,11 @@
         :class="{ active: activeProjectIndex === index }"
         @click="toggleProject(index)">
 
-
-        <!-- 项目编号不需要 -->
-        <!-- <div class="project-index">
-          {{ formatIndex(index + 1) }}
-        </div> -->
-
-        <div class="project-visual" :style="{ background: project.cover }">
+        <div
+          class="project-visual"
+          :class="`project-visual-${index + 1}`"
+          :style="{ background: project.cover }"
+        >
           <div class="browser-card">
             <div class="browser-top">
               <span></span>
@@ -130,7 +128,4 @@ const toggleProject = (index) => {
   activeProjectIndex.value = activeProjectIndex.value === index ? -1 : index
 }
 
-const formatIndex = (index) => {
-  return String(index).padStart(2, '0')
-}
 </script>

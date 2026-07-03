@@ -19,10 +19,16 @@
       class="theme-toggle"
       :class="{ dark: isDark }"
       type="button"
-      aria-label="Toggle theme"
+      :aria-label="isDark ? 'Switch to light theme' : 'Switch to dark theme'"
       @click="toggleTheme"
     >
-      <span>{{ isDark ? '☀' : '☾' }}</span>
+      <Transition name="theme-icon" mode="out-in">
+        <BaseIcon
+          :key="isDark ? 'sun' : 'moon'"
+          :class="isDark ? 'sun-icon' : 'moon-icon'"
+          :name="isDark ? 'sun' : 'moon'"
+        />
+      </Transition>
     </button>
 
     <RouterView v-slot="{ Component }">
@@ -37,6 +43,7 @@
 
 <script setup>
 import { onMounted, ref, watch } from 'vue'
+import BaseIcon from './components/common/BaseIcon.vue'
 import BottomNav from './components/common/BottomNav.vue'
 
 const isDark = ref(false)
