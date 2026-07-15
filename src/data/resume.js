@@ -191,6 +191,91 @@ export const projects = [
         label: 'Logistics Efficiency'
       }
     ]
+  },
+  {
+    title: 'AI Design Assistant',
+    tags: ['AI Product', 'Design System'],
+    cover: 'linear-gradient(135deg, #fff7ed 0%, #dbeafe 48%, #2563eb 100%)',
+    desc:
+      'Explored AI-assisted design workflows, helping teams refine layouts, copy and reusable components.',
+    results: [
+      {
+        value: '36%',
+        label: 'Design Efficiency'
+      },
+      {
+        value: '18%',
+        label: 'Iteration Speed'
+      }
+    ]
+  },
+  {
+    title: 'E-commerce Checkout Experience',
+    tags: ['E-commerce', 'Conversion'],
+    cover: 'linear-gradient(135deg, #fff7ed 0%, #dbeafe 52%, #2563eb 100%)',
+    desc:
+      'Optimized product browsing, checkout and order confirmation flows to improve shopping conversion.',
+    results: [
+      {
+        value: '28%',
+        label: 'Conversion Growth'
+      },
+      {
+        value: '16%',
+        label: 'Drop-off Reduction'
+      }
+    ]
+  },
+  {
+    title: 'Live Engagement Platform',
+    tags: ['Live Streaming', 'Community'],
+    cover: 'linear-gradient(135deg, #eff6ff 0%, #bfdbfe 50%, #1d4ed8 100%)',
+    desc:
+      'Designed live interaction, audience feedback and content operation tools for creator growth.',
+    results: [
+      {
+        value: '35%',
+        label: 'Engagement Growth'
+      },
+      {
+        value: '24%',
+        label: 'Retention Increase'
+      }
+    ]
+  },
+  {
+    title: 'Forex Trading Dashboard',
+    tags: ['FinTech', 'Trading'],
+    cover: 'linear-gradient(135deg, #f8fafc 0%, #dbeafe 48%, #0f172a 100%)',
+    desc:
+      'Planned a trading dashboard with market quotes, chart analysis and fast order workflows.',
+    results: [
+      {
+        value: '32%',
+        label: 'Decision Efficiency'
+      },
+      {
+        value: '21%',
+        label: 'Task Speed Growth'
+      }
+    ]
+  },
+  {
+    title: 'OA Approval Workflow',
+    tags: ['Enterprise OA', 'Workflow'],
+    cover: 'linear-gradient(135deg, #f3f7ff 0%, #dbeafe 48%, #2563eb 100%)',
+    desc:
+      'Built an approval workflow for purchase requests, notifications and cross-role collaboration.',
+    results: [
+      {
+        value: '45%',
+        label: 'Approval Speed'
+      },
+      {
+        value: '30%',
+        label: 'Manual Work Reduction'
+      }
+    ]
   }
 ]
 

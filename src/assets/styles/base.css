@@ -1127,11 +1127,14 @@ button {
 
 .summary-item {
   min-height: 78px;
-  padding: 13px 10px;
-  border: 1px solid rgba(232, 239, 250, 0.95);
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 12px 28px rgba(15, 107, 255, 0.07);
+  padding: 14px 11px;
+  border: 1px solid rgba(219, 230, 247, 0.96);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 251, 255, 0.88));
+  box-shadow:
+    0 14px 30px rgba(15, 107, 255, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .summary-item strong {
@@ -1156,18 +1159,22 @@ button {
 
 .project-item {
   position: relative;
-  padding: 16px;
-  border: 1px solid rgba(232, 239, 250, 0.96);
-  border-radius: 32px;
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: var(--shadow-card);
+  padding: 14px;
+  border: 1px solid rgba(221, 232, 248, 0.98);
+  border-radius: 30px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 251, 255, 0.93));
+  box-shadow:
+    0 18px 44px rgba(15, 107, 255, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.86);
   overflow: hidden;
   cursor: pointer;
   animation: card-up 0.36s ease both;
   transition:
     transform 0.22s ease,
     box-shadow 0.22s ease,
-    border-color 0.22s ease;
+    border-color 0.22s ease,
+    background 0.22s ease;
 }
 
 .project-item:nth-child(2) {
@@ -1181,65 +1188,98 @@ button {
 .project-item:nth-child(4) {
   animation-delay: 0.18s;
 }
-/* experience卡片右下角的圆点已隐藏 */
-.project-item::after {
-  content: '';
-  position: absolute;
-  right: -48px;
-  bottom: -52px;
-  width: 124px;
-  height: 124px;
-  border-radius: 999px;
-  background: rgba(15, 107, 255, 0);
+
+.project-item:nth-child(5) {
+  animation-delay: 0.24s;
 }
 
+.project-item:nth-child(6) {
+  animation-delay: 0.3s;
+}
+
+.project-item:nth-child(7) {
+  animation-delay: 0.36s;
+}
+
+.project-item:nth-child(8) {
+  animation-delay: 0.42s;
+}
+
+.project-item:nth-child(9) {
+  animation-delay: 0.48s;
+}
 .project-item:active {
   transform: scale(0.985);
 }
 
 .project-item.active {
-  border-color: rgba(15, 107, 255, 0.22);
-  box-shadow: 0 22px 54px rgba(15, 107, 255, 0.14);
+  border-color: rgba(15, 107, 255, 0.26);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(244, 249, 255, 0.96));
+  box-shadow:
+    0 24px 58px rgba(15, 107, 255, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
 }
 
-.project-index {
-  position: absolute;
-  right: 18px;
-  top: 16px;
-  z-index: 2;
-  color: rgba(15, 107, 255, 0.16);
-  font-size: 36px;
-  font-weight: 900;
-  line-height: 1;
+.project-item.active .project-visual {
+  transform: translateY(-1px);
 }
 
 .project-visual {
   position: relative;
-  height: 138px;
-  border-radius: 24px;
+  height: 128px;
+  border-radius: 22px;
   overflow: hidden;
-  box-shadow: 0 18px 38px rgba(15, 107, 255, 0.14);
+  box-shadow:
+    0 16px 34px rgba(15, 107, 255, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.42);
+  transition:
+    transform 0.24s ease,
+    box-shadow 0.24s ease;
 }
 
 .project-visual::before {
   content: '';
   position: absolute;
   inset: 0;
+  z-index: 1;
   background:
-    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.7), transparent 24%),
-    linear-gradient(120deg, rgba(255, 255, 255, 0.16), transparent 48%);
+    radial-gradient(circle at 16% 16%, rgba(255, 255, 255, 0.66), transparent 24%),
+    radial-gradient(circle at 90% 18%, rgba(255, 255, 255, 0.28), transparent 26%),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.2), transparent 52%);
+}
+
+.project-visual-image {
+  background: #f4efe5;
+}
+
+.project-visual-image::before {
+  display: none;
+}
+
+.project-cover-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .browser-card {
   position: absolute;
-  left: 22px;
-  right: 22px;
-  bottom: 16px;
-  height: 92px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.76);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 16px 34px rgba(7, 18, 38, 0.12);
+  z-index: 2;
+  left: 20px;
+  right: 20px;
+  bottom: 14px;
+  height: 84px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(14px);
+  box-shadow:
+    0 16px 34px rgba(7, 18, 38, 0.11),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
   overflow: hidden;
 }
 
@@ -1337,7 +1377,7 @@ button {
 .project-content {
   position: relative;
   z-index: 2;
-  padding-top: 16px;
+  padding: 16px 2px 2px;
 }
 
 .project-title-row {
@@ -1349,20 +1389,66 @@ button {
 
 .project-title-row h2 {
   margin: 0;
+  color: #172033;
   font-size: 18px;
   line-height: 1.35;
   letter-spacing: -0.3px;
 }
 
-.project-title-row button {
+.project-toggle {
   flex: 0 0 auto;
-  height: 28px;
-  padding: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 30px;
+  padding: 0 12px;
+  border: 1px solid rgba(15, 107, 255, 0.12);
   border-radius: 999px;
   color: var(--blue);
   font-size: 11px;
   font-weight: 800;
-  background: var(--blue-light);
+  background:
+    linear-gradient(180deg, rgba(239, 246, 255, 0.98), rgba(225, 237, 255, 0.82));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.82);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.project-toggle:active {
+  transform: scale(0.96);
+}
+
+.project-toggle i {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  transform: translateY(-1px) rotate(45deg);
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  border-radius: 1px;
+  opacity: 0.8;
+  transition:
+    transform 0.24s ease,
+    opacity 0.2s ease;
+}
+
+.project-item.active .project-toggle {
+  color: #ffffff;
+  border-color: rgba(15, 107, 255, 0.28);
+  background:
+    linear-gradient(135deg, #0f6bff 0%, #2563eb 58%, #1d4ed8 100%);
+  box-shadow:
+    0 10px 22px rgba(15, 107, 255, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24);
+}
+
+.project-item.active .project-toggle i {
+  transform: translateY(2px) rotate(225deg);
+  opacity: 1;
 }
 
 .project-tags {
@@ -1372,20 +1458,25 @@ button {
 
 .project-content > p {
   margin: 0;
-  color: #5c687d;
+  color: #536176;
   font-size: 12px;
   line-height: 1.75;
 }
 
 .refined-result-grid {
   margin-top: 16px;
-  padding: 13px;
-  border-radius: 20px;
-  background: #f6f9ff;
+  padding: 13px 14px;
+  border: 1px solid rgba(222, 233, 249, 0.88);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(246, 249, 255, 0.98), rgba(239, 245, 255, 0.86));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
 }
 
 .refined-result-grid div {
   position: relative;
+  display: grid;
+  gap: 4px;
 }
 
 .refined-result-grid div + div::before {
@@ -1400,21 +1491,60 @@ button {
 
 .project-detail-panel {
   display: grid;
-  gap: 10px;
+  gap: 13px;
   margin-top: 14px;
-  padding: 14px;
-  border-radius: 20px;
-  background: #071226;
+  padding: 16px;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(96, 165, 250, 0.22), transparent 30%),
+    linear-gradient(135deg, #071226 0%, #0d2447 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 14px 28px rgba(7, 18, 38, 0.16);
+}
+
+.detail-panel-head {
+  display: grid;
+  gap: 5px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detail-panel-head span {
+  color: rgba(147, 197, 253, 0.86);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.detail-panel-head strong {
+  color: rgba(255, 255, 255, 0.96);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.detail-list {
+  display: grid;
+  gap: 9px;
 }
 
 .detail-row {
   display: grid;
-  gap: 5px;
+  grid-template-columns: 58px 1fr;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .detail-row span {
-  color: rgba(255, 255, 255, 0.46);
+  color: rgba(255, 255, 255, 0.52);
   font-size: 10px;
+  font-weight: 700;
+  line-height: 1.45;
 }
 
 .detail-row strong {
@@ -1429,7 +1559,7 @@ button {
     opacity 0.22s ease,
     transform 0.22s ease,
     max-height 0.22s ease;
-  max-height: 220px;
+  max-height: 300px;
   overflow: hidden;
 }
 
@@ -2186,6 +2316,24 @@ button {
   box-shadow: 0 20px 52px rgba(0, 0, 0, 0.28);
 }
 
+.dark-theme .project-item,
+.dark-theme .summary-item {
+  border-color: rgba(148, 163, 184, 0.18);
+  background:
+    linear-gradient(180deg, rgba(31, 45, 69, 0.92), rgba(20, 34, 56, 0.9));
+  box-shadow:
+    0 20px 52px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .project-item.active {
+  border-color: rgba(93, 156, 255, 0.34);
+  box-shadow:
+    0 24px 58px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(93, 156, 255, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
 .dark-theme .page-header h1,
 .dark-theme .hero-info h1,
 .dark-theme .section-title h2,
@@ -2217,11 +2365,28 @@ button {
 .dark-theme .section-title span,
 .dark-theme .tag-row span,
 .dark-theme .more-label,
-.dark-theme .project-title-row button,
+.dark-theme .project-toggle,
 .dark-theme .refined-work-info button,
 .dark-theme .preview-content span {
   color: #7db0ff;
   background: rgba(93, 156, 255, 0.14);
+}
+
+.dark-theme .project-toggle {
+  border-color: rgba(93, 156, 255, 0.16);
+  background:
+    linear-gradient(180deg, rgba(93, 156, 255, 0.16), rgba(59, 130, 246, 0.1));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.dark-theme .project-item.active .project-toggle {
+  color: #ffffff;
+  border-color: rgba(125, 176, 255, 0.32);
+  background:
+    linear-gradient(135deg, #2563eb 0%, #1d4ed8 56%, #1e40af 100%);
+  box-shadow:
+    0 10px 24px rgba(37, 99, 235, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
 }
 
 .dark-theme .avatar-card {
@@ -2241,6 +2406,7 @@ button {
 .dark-theme .certificate-list p,
 .dark-theme .expect-item,
 .dark-theme .refined-result-grid {
+  border-color: rgba(148, 163, 184, 0.12);
   background: rgba(15, 23, 42, 0.82);
 }
 
@@ -2249,7 +2415,9 @@ button {
 }
 
 .dark-theme .project-detail-panel {
-  background: rgba(2, 6, 23, 0.86);
+  background:
+    radial-gradient(circle at 8% 0%, rgba(96, 165, 250, 0.18), transparent 30%),
+    linear-gradient(135deg, rgba(2, 6, 23, 0.92), rgba(14, 35, 68, 0.9));
 }
 
 .dark-theme .bottom-nav {

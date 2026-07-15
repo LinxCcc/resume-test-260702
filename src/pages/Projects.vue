@@ -39,10 +39,20 @@
 
         <div
           class="project-visual"
-          :class="`project-visual-${index + 1}`"
-          :style="{ background: project.cover }"
+          :class="[
+            `project-visual-${index + 1}`,
+            { 'project-visual-image': projectCoverImages[index] }
+          ]"
+          :style="getProjectCoverStyle(project, index)"
         >
-          <div class="browser-card">
+          <img
+            v-if="projectCoverImages[index]"
+            class="project-cover-image"
+            :src="projectCoverImages[index]"
+            :alt="`${project.title} cover`"
+          >
+
+          <div v-else class="browser-card">
             <div class="browser-top">
               <span></span>
               <span></span>
@@ -61,8 +71,14 @@
         <div class="project-content">
           <div class="project-title-row">
             <h2>{{ project.title }}</h2>
-            <button type="button">
-              {{ activeProjectIndex === index ? '收起' : '展开' }}
+            <button
+              type="button"
+              class="project-toggle"
+              :aria-expanded="activeProjectIndex === index"
+              @click.stop="toggleProject(index)"
+            >
+              <span>{{ activeProjectIndex === index ? '收起' : '展开' }}</span>
+              <i aria-hidden="true"></i>
             </button>
           </div>
 
@@ -86,19 +102,26 @@
               v-if="activeProjectIndex === index"
               class="project-detail-panel"
             >
-              <div class="detail-row">
-                <span>Role</span>
-                <strong>Product Planning / Requirement Analysis</strong>
+              <div class="detail-panel-head">
+                <span>Contribution Snapshot</span>
+                <strong>What I drove in this project</strong>
               </div>
 
-              <div class="detail-row">
-                <span>Method</span>
-                <strong>User Research / Data Analysis / Agile Delivery</strong>
-              </div>
+              <div class="detail-list">
+                <div class="detail-row">
+                  <span>Role</span>
+                  <strong>Product Planning / Requirement Analysis</strong>
+                </div>
 
-              <div class="detail-row">
-                <span>Output</span>
-                <strong>PRD / Prototype / Roadmap / Growth Review</strong>
+                <div class="detail-row">
+                  <span>Method</span>
+                  <strong>User Research / Data Analysis / Agile Delivery</strong>
+                </div>
+
+                <div class="detail-row">
+                  <span>Output</span>
+                  <strong>PRD / Prototype / Roadmap / Growth Review</strong>
+                </div>
               </div>
             </div>
           </Transition>
@@ -121,8 +144,36 @@
 <script setup>
 import { ref } from 'vue'
 import { projects } from '../data/resume'
+import ex01Cover from '../assets/experience/ex-01.jpg'
+import ex02Cover from '../assets/experience/ex-02.jpg'
+import ex03Cover from '../assets/experience/ex-03.jpg'
+import ex04Cover from '../assets/experience/ex-04.jpg'
+import ex05Cover from '../assets/experience/ex-05.jpg'
+import ex06Cover from '../assets/experience/ex-06.jpg'
+import ex07Cover from '../assets/experience/ex-07.jpg'
+import ex08Cover from '../assets/experience/ex-08.jpg'
+import ex09Cover from '../assets/experience/ex-09.jpg'
 
 const activeProjectIndex = ref(0)
+const projectCoverImages = [
+  ex01Cover,
+  ex02Cover,
+  ex03Cover,
+  ex04Cover,
+  ex09Cover,
+  ex05Cover,
+  ex06Cover,
+  ex07Cover,
+  ex08Cover
+]
+
+const getProjectCoverStyle = (project, index) => {
+  if (projectCoverImages[index]) {
+    return {}
+  }
+
+  return { background: project.cover }
+}
 
 const toggleProject = (index) => {
   activeProjectIndex.value = activeProjectIndex.value === index ? -1 : index
