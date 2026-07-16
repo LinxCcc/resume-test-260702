@@ -15,11 +15,13 @@
     <section class="more-hero card">
       <div>
         <span class="more-label">Design Collection</span>
-        <h2>Product design is not only about screens, but also about solving real problems.</h2>
+        <h2>Selected explorations across product, visual and interaction design.</h2>
       </div>
 
-      <div class="more-hero-icon">
-        ✦
+      <div class="more-hero-icon" aria-hidden="true">
+        <span class="design-badge-dot"></span>
+        <span class="design-badge-line"></span>
+        <span class="design-badge-line short"></span>
       </div>
     </section>
 
@@ -29,7 +31,7 @@
         :key="work.title"
         class="work-card refined-work-card"
         :style="{ animationDelay: `${index * 0.06}s` }"
-        @click="openPreview(work, index)"
+        @click="openPreview(work)"
       >
         <div class="work-cover refined-work-cover" :style="{ background: work.cover }">
           <div class="cover-shine"></div>
@@ -48,11 +50,6 @@
               <div class="mock-line short"></div>
             </div>
           </div>
-          
-          <!-- 作品编号不需要 -->
-          <!-- <span class="work-number">
-            {{ formatIndex(index + 1) }}
-          </span> -->
           
         </div>
 
@@ -80,26 +77,9 @@
           <div
             class="preview-image refined-preview-image"
             :style="{ background: selectedWork.cover }"
-          >
-            <div class="preview-device">
-              <div class="preview-device-top">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-
-              <div class="preview-device-body">
-                <div class="preview-card-main"></div>
-                <div class="preview-card-side"></div>
-                <div class="preview-line"></div>
-                <div class="preview-line short"></div>
-              </div>
-            </div>
-          </div>
+          ></div>
 
           <div class="preview-content">
-            <!-- 作品编号不需要 -->
-            <!-- <span>Work {{ formatIndex(selectedIndex + 1) }}</span> -->
             <h2>{{ selectedWork.title }}</h2>
             <p>{{ selectedWork.category }}</p>
           </div>
@@ -118,18 +98,13 @@ import { ref } from 'vue'
 import { works } from '../data/resume'
 
 const selectedWork = ref(null)
-const selectedIndex = ref(0)
 
-const openPreview = (work, index) => {
+const openPreview = (work) => {
   selectedWork.value = work
-  selectedIndex.value = index
 }
 
 const closePreview = () => {
   selectedWork.value = null
 }
 
-const formatIndex = (index) => {
-  return String(index).padStart(2, '0')
-}
 </script>

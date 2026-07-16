@@ -52,6 +52,11 @@
             :alt="`${project.title} cover`"
           >
 
+          <div
+            v-if="projectCoverImages[index]"
+            class="cover-shine project-cover-shine"
+          ></div>
+
           <div v-else class="browser-card">
             <div class="browser-top">
               <span></span>
