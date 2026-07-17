@@ -1,4 +1,13 @@
 
+import moreCover01 from '../assets/more/cover-01.jpg'
+import moreCover02 from '../assets/more/cover-02.jpg'
+import moreCover03 from '../assets/more/cover-03.jpg'
+import moreCover04 from '../assets/more/cover-04.jpg'
+import moreCover05 from '../assets/more/cover-05.jpg'
+import moreCover06 from '../assets/more/cover-06.jpg'
+import moreCover07 from '../assets/more/cover-07.jpg'
+import moreCover08 from '../assets/more/cover-08.jpg'
+
 /* 关于我 */
 export const profile = {
   name: 'Alex Carter',
@@ -294,36 +303,41 @@ export const works = [
   {
     title: 'Smart Home App Design',
     category: 'UI Design · Mobile App',
-    cover: 'linear-gradient(120deg, #dbe9ff 0%, #f8fbff 45%, #8bb6ff 100%)'
+    cover: `url(${moreCover01})`
   },
   {
     title: 'Illustration Practice',
     category: 'Illustration Design',
-    cover: 'linear-gradient(120deg, #dce8ff 0%, #ffefe1 52%, #7aa7ff 100%)'
+    cover: `url(${moreCover02})`
   },
   {
     title: 'Admin Dashboard Design',
     category: 'UI Design · B2B System',
-    cover: 'linear-gradient(120deg, #071226 0%, #0d2c73 52%, #1677ff 100%)'
+    cover: `url(${moreCover03})`
   },
   {
     title: 'Brand Visual Design',
     category: 'Brand Design',
-    cover: 'linear-gradient(120deg, #f5f5f5 0%, #d8d8d8 50%, #888888 100%)'
+    cover: `url(${moreCover04})`
   },
   {
     title: 'Component Library Design',
     category: 'UI Design',
-    cover: 'linear-gradient(120deg, #edf5ff 0%, #74b7ff 48%, #0b6bff 100%)'
+    cover: `url(${moreCover05})`
   },
   {
     title: 'Landscape Illustration',
     category: 'Illustration Design',
-    cover: 'linear-gradient(120deg, #fff3db 0%, #ffa94d 52%, #9c5c18 100%)'
+    cover: `url(${moreCover06})`
   },
   {
     title: '3D Illustration Design',
     category: 'Visual Design',
-    cover: 'linear-gradient(120deg, #f1dcff 0%, #c89bff 48%, #7b4cff 100%)'
+    cover: `url(${moreCover07})`
+  },
+  {
+    title: 'New Project',
+    category: 'Portfolio Work · Coming Soon',
+    cover: `url(${moreCover08})`
   }
 ]

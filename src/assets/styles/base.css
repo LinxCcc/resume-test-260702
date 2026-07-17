@@ -631,6 +631,8 @@ button {
 
 .preview-panel {
   width: min(100%, 390px);
+  max-width: calc(100vw - 44px);
+  box-sizing: border-box;
   padding: 18px;
   border-radius: 30px;
   background: #ffffff;
@@ -1800,10 +1802,14 @@ button {
 
 .refined-work-cover {
   position: relative;
-  height: 184px;
+  aspect-ratio: 1604 / 980;
+  height: auto;
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.5);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   box-shadow:
     0 18px 38px rgba(15, 107, 255, 0.13),
     inset 0 1px 0 rgba(255, 255, 255, 0.48);
@@ -1815,98 +1821,14 @@ button {
   inset: 0;
   z-index: 1;
   background:
-    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.52), transparent 24%),
-    linear-gradient(120deg, rgba(255, 255, 255, 0.12), transparent 52%);
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.2), transparent 24%),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.06), transparent 52%);
 }
 
 .refined-work-cover .cover-shine {
   z-index: 3;
   opacity: 0.38;
   animation-duration: 6.5s;
-}
-
-.work-mock-card {
-  position: absolute;
-  z-index: 2;
-  left: 22px;
-  right: 22px;
-  bottom: 20px;
-  height: 114px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.76);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 18px 40px rgba(7, 18, 38, 0.13);
-  overflow: hidden;
-}
-
-.mock-dot-row {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-  height: 26px;
-  padding: 0 13px;
-  border-bottom: 1px solid rgba(15, 107, 255, 0.08);
-}
-
-.mock-dot-row span {
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: rgba(15, 107, 255, 0.38);
-}
-
-.mock-content {
-  position: relative;
-  height: 88px;
-  padding: 12px 13px;
-}
-
-.mock-block {
-  position: absolute;
-  border-radius: 13px;
-  background: rgba(15, 107, 255, 0.14);
-}
-
-.mock-block.large {
-  left: 13px;
-  bottom: 12px;
-  width: 62px;
-  height: 44px;
-}
-
-.mock-block.small {
-  right: 13px;
-  bottom: 12px;
-  width: 42px;
-  height: 44px;
-  background: rgba(7, 18, 38, 0.13);
-}
-
-.mock-line {
-  position: absolute;
-  left: 88px;
-  top: 22px;
-  width: 88px;
-  height: 8px;
-  border-radius: 999px;
-  background: rgba(15, 107, 255, 0.18);
-}
-
-.mock-line.short {
-  top: 41px;
-  width: 62px;
-  background: rgba(7, 18, 38, 0.12);
-}
-
-.work-number {
-  position: absolute;
-  top: 15px;
-  right: 17px;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 34px;
-  font-weight: 900;
-  line-height: 1;
-  text-shadow: 0 8px 24px rgba(7, 18, 38, 0.12);
 }
 
 .refined-work-info {
@@ -1983,7 +1905,7 @@ button {
   padding: 16px;
 }
 
-.preview-close {
+.refined-preview-panel .preview-close {
   position: absolute;
   right: 18px;
   top: 18px;
@@ -1992,6 +1914,7 @@ button {
   place-items: center;
   width: 34px;
   height: 34px;
+  margin: 0;
   border: 1px solid rgba(255, 255, 255, 0.66);
   border-radius: 999px;
   color: #071226;
@@ -2007,8 +1930,8 @@ button {
 
 .refined-preview-image {
   position: relative;
-  aspect-ratio: 9 / 5;
-  min-height: 220px;
+  aspect-ratio: 1604 / 980;
+  height: auto;
   border-radius: 24px;
   overflow: hidden;
   background-position: center;
@@ -2058,7 +1981,7 @@ button {
   font-size: 13px;
 }
 
-.preview-action {
+.refined-preview-panel .preview-action {
   width: 100%;
   height: 44px;
   margin-top: 18px;
@@ -2080,20 +2003,6 @@ button {
 
   .more-hero-icon {
     display: none;
-  }
-
-  .refined-work-cover {
-    height: 172px;
-  }
-
-  .work-mock-card {
-    left: 16px;
-    right: 16px;
-    height: 106px;
-  }
-
-  .mock-line {
-    width: 68px;
   }
 
 }

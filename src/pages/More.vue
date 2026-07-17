@@ -33,24 +33,8 @@
         :style="{ animationDelay: `${index * 0.06}s` }"
         @click="openPreview(work)"
       >
-        <div class="work-cover refined-work-cover" :style="{ background: work.cover }">
+        <div class="work-cover refined-work-cover" :style="{ backgroundImage: work.cover }">
           <div class="cover-shine"></div>
-
-          <div class="work-mock-card">
-            <div class="mock-dot-row">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-
-            <div class="mock-content">
-              <div class="mock-block large"></div>
-              <div class="mock-block small"></div>
-              <div class="mock-line"></div>
-              <div class="mock-line short"></div>
-            </div>
-          </div>
-          
         </div>
 
         <div class="work-info refined-work-info">
@@ -76,7 +60,7 @@
 
           <div
             class="preview-image refined-preview-image"
-            :style="{ background: selectedWork.cover }"
+            :style="{ backgroundImage: selectedWork.cover }"
           ></div>
 
           <div class="preview-content">
