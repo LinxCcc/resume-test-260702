@@ -7,6 +7,35 @@ import moreCover05 from '../assets/more/cover-05.jpg'
 import moreCover06 from '../assets/more/cover-06.jpg'
 import moreCover07 from '../assets/more/cover-07.jpg'
 import moreCover08 from '../assets/more/cover-08.jpg'
+import moreCover09 from '../assets/more/cover-09.jpg'
+import moreCover10 from '../assets/more/cover-10.jpg'
+import moreCover11 from '../assets/more/cover-11.jpg'
+import moreCover12 from '../assets/more/cover-12.jpg'
+import moreCover13 from '../assets/more/cover-13.jpg'
+import moreCover14 from '../assets/more/cover-14.jpg'
+import moreCover15 from '../assets/more/cover-15.jpg'
+import moreCover16 from '../assets/more/cover-16.jpg'
+import moreCover17 from '../assets/more/cover-17.jpg'
+
+const moreProjectCovers = [
+  moreCover01,
+  moreCover02,
+  moreCover03,
+  moreCover04,
+  moreCover05,
+  moreCover06,
+  moreCover07,
+  moreCover08,
+  moreCover09,
+  moreCover10,
+  moreCover11,
+  moreCover12,
+  moreCover13,
+  moreCover14,
+  moreCover15,
+  moreCover16,
+  moreCover17
+]
 
 /* 关于我 */
 export const profile = {
@@ -339,5 +368,10 @@ export const works = [
     title: 'New Project',
     category: 'Portfolio Work · Coming Soon',
     cover: `url(${moreCover08})`
-  }
+  },
+  ...Array.from({ length: 9 }, (_, index) => ({
+    title: `New Project ${String(index + 2).padStart(2, '0')}`,
+    category: 'Portfolio Work · Coming Soon',
+    cover: `url(${moreProjectCovers[index + 8]})`
+  }))
 ]
