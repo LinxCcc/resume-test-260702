@@ -39,6 +39,11 @@ body {
     #e7effc;
 }
 
+/* Preserve line breaks written as \n in resume.js text fields. */
+p {
+  white-space: pre-line;
+}
+
 button {
   border: none;
   background: none;

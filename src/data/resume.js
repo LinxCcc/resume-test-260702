@@ -162,11 +162,11 @@ export const jobExpectations = [
 /* 项目经历 */
 export const projects = [
   {
-    title: 'Enterprise Data Hub',
-    tags: ['B2B SaaS', 'Data Visualization'],
+    title: '融资租赁业务对客小程序',
+    tags: ['2C', 'Mini Program', '租后'],
     cover: 'linear-gradient(135deg, #dfeaff 0%, #f8fbff 48%, #7aa7ff 100%)',
     desc:
-      'Built an integrated data platform for enterprise reporting, analysis and permission management.',
+      '1. 围绕租后客户服务场景，设计客户身份识别、订单/账单查询、业务申请提交、资料上传及结果反馈等流程，打通 C 端客户操作与 B 端业务处理链路，提升客户服务线上化和自助化水平，减少人工客服及运营介入成本。\n\n2.负责远程水印照片、自助开票、延展期申请、扣款方式变更等高频功能设计，提升客户办理效率、服务透明度及租后管理数字化能力。\n',
     results: [
       {
         value: '30%',
@@ -179,11 +179,11 @@ export const projects = [
     ]
   },
   {
-    title: 'Smart Office App',
-    tags: ['Mobile App', 'Collaboration'],
+    title: '融资租赁业务管理中后台',
+    tags: ['B2B', 'Web', '核心业务系统', '租中租后'],
     cover: 'linear-gradient(135deg, #f3f7ff 0%, #b9d2ff 52%, #1267ff 100%)',
     desc:
-      'Designed a mobile collaboration app for employees, covering approval, communication and task tracking.',
+      '1. 负责费用结算模块设计，支持不同费用类型下的费用申请、审核、结算、财务分录生成及对账处理，提升业务费用管理规范性和财务处理效率。\n\n2. 负责文档下载中心设计，支持文件集中存储、异步加水印、客户敏感数据脱敏、下载查阅鉴权及大文件上传下载，提升资料管理合规性及跨系统流转效率。\n',
     results: [
       {
         value: '25%',
@@ -196,11 +196,11 @@ export const projects = [
     ]
   },
   {
-    title: 'AI Analytics Platform',
-    tags: ['B2B SaaS', 'AI Analytics'],
+    title: '融资租赁业务进件系统前台',
+    tags: ['B2C', 'APP', '进件系统', '租前'],
     cover: 'linear-gradient(135deg, #101b36 0%, #0f4fe8 52%, #6fb5ff 100%)',
     desc:
-      'Planned an AI-powered analytics platform to help teams identify business risks and decision insights.',
+      '1. 负责预审能力建设，覆盖客户信息采集、征信授权、车辆信息录入、资料上传、独立预审及支付宝预审流程衔接等场景，沉淀标准化进件数据，为前期质控、风险识别及后续授信审批提供数据基础。\n\n2. 负责二手车标的物评估能力建设，对接外部车辆估值服务商，支持租前购车、回租场景下的标的物估值，以及租后处置阶段的车辆价值评估，为租前风险判断、预授信融资额度测算、租后资产管理及处置决策提供数据支撑。\n\n3. 负责融资方案提报及授信审批模块设计，承接风控策略结果，支持额度秒批、多种增信融资方案、人工授信审批任务流转、审批意见记录及审批结果回传，实现风控策略、融资方案与人工审批流程的系统化衔接。\n\n4. 负责视频面签模块设计，支持客户远程确认办理意愿、业务信息核验、视频留痕及面签结果回传，提升融资租赁线上办理合规性和关键流程可追溯性。\n\n5. 负责扣款模块设计，对接中国银联、网商银行、支付宝等支付及扣款通道，支持租金扣款、还款结果回传、扣款状态跟踪及异常处理，提升资金扣划流程的自动化和稳定性。',
     results: [
       {
         value: '40%',
@@ -213,11 +213,11 @@ export const projects = [
     ]
   },
   {
-    title: 'Supply Chain Management System',
-    tags: ['B2B SaaS', 'Supply Chain'],
+    title: '海外跨境支付平台项目',
+    tags: ['B2B', 'SaaS'],
     cover: 'linear-gradient(135deg, #ffffff 0%, #d9e7ff 48%, #4f8dff 100%)',
     desc:
-      'Optimized supplier selection, procurement, inventory and logistics workflows for enterprise clients.',
+      '1. 负责海外本地支付产品多端交互设计，覆盖 Agent 端、Merchant 商户端、支付收银台、SaaS 管理平台及白标商户后台等核心产品形态。围绕海外支付场景下商户入驻、支付方式配置、交易管理、订单查询、退款处理、对账结算、运营管理等业务流程，梳理多角色业务关系与操作链路，完成信息架构、交互流程、页面设计及组件规范建设。\n\n2. 针对不同角色（渠道代理商、商户运营人员、终端用户、平台管理员）的使用需求，设计差异化产品体验，优化支付流程中的状态反馈、异常处理、数据展示及运营效率，提升多国家、多支付渠道场景下产品易用性与业务支撑能力。\n',
     results: [
       {
         value: '18%',
@@ -230,7 +230,7 @@ export const projects = [
     ]
   },
   {
-    title: 'AI Design Assistant',
+    title: '民生金租前中后台交互',
     tags: ['AI Product', 'Design System'],
     cover: 'linear-gradient(135deg, #fff7ed 0%, #dbeafe 48%, #2563eb 100%)',
     desc:
