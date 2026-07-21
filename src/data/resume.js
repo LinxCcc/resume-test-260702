@@ -247,11 +247,11 @@ export const projects = [
     ]
   },
   {
-    title: 'E-commerce Checkout Experience',
-    tags: ['E-commerce', 'Conversion'],
+    title: '兴业手机银行生活商城',
+    tags: ['2C', 'APP'],
     cover: 'linear-gradient(135deg, #fff7ed 0%, #dbeafe 52%, #2563eb 100%)',
     desc:
-      'Optimized product browsing, checkout and order confirmation flows to improve shopping conversion.',
+      '负责银行 APP 内商城模块交互设计，围绕用户购物及交易流程，覆盖商城首页、商品列表、商品详情、订单流程、收银台支付等核心场景，优化用户浏览、决策、下单及支付体验，提升银行 APP 内商业化服务能力。',
     results: [
       {
         value: '28%',
@@ -264,11 +264,11 @@ export const projects = [
     ]
   },
   {
-    title: 'Live Engagement Platform',
-    tags: ['Live Streaming', 'Community'],
+    title: '奇乐直播',
+    tags: ['2C', 'APP', 'Live', 'Social'],
     cover: 'linear-gradient(135deg, #eff6ff 0%, #bfdbfe 50%, #1d4ed8 100%)',
     desc:
-      'Designed live interaction, audience feedback and content operation tools for creator growth.',
+      '负责亿级月流水产品体验设计及设计团队管理，主导 APP 大版本体验升级，覆盖用户端核心页面、直播互动场景、小游戏及运营活动、虚拟礼物及动效体系设计。围绕信息浏览、直播互动、消费转化等核心链路，推动产品体验优化及商业化能力建设。',
     results: [
       {
         value: '35%',
@@ -281,11 +281,11 @@ export const projects = [
     ]
   },
   {
-    title: 'Forex Trading Dashboard',
+    title: 'CFETS FX2017外汇交易系统项目',
     tags: ['FinTech', 'Trading'],
     cover: 'linear-gradient(135deg, #f8fafc 0%, #dbeafe 48%, #0f172a 100%)',
     desc:
-      'Planned a trading dashboard with market quotes, chart analysis and fast order workflows.',
+      '参与外汇交易平台相关体验设计，围绕用户交易操作流程，负责交易页面的信息展示、交互流程优化及界面体验设计，提升用户操作便捷性。',
     results: [
       {
         value: '32%',
@@ -298,11 +298,11 @@ export const projects = [
     ]
   },
   {
-    title: 'OA Approval Workflow',
-    tags: ['Enterprise OA', 'Workflow'],
+    title: '企业内部OA项目',
+    tags: ['OA', 'Workflow'],
     cover: 'linear-gradient(135deg, #f3f7ff 0%, #dbeafe 48%, #2563eb 100%)',
     desc:
-      'Built an approval workflow for purchase requests, notifications and cross-role collaboration.',
+      '参与企业内部 OA 系统产品设计，围绕员工办公、流程审批、信息管理等场景，负责系统页面交互设计和体验优化，支持企业内部流程线上化。',
     results: [
       {
         value: '45%',
