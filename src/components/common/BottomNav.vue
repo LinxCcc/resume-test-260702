@@ -21,17 +21,17 @@ import BaseIcon from './BaseIcon.vue'
 
 const navs = [
   {
-    label: 'AboutMe',
+    label: '关于我',
     path: '/about',
     icon: 'profile'
   },
   {
-    label: 'Experience',
+    label: '项目经历',
     path: '/projects',
     icon: 'briefcase'
   },
   {
-    label: 'More',
+    label: '更多',
     path: '/more',
     icon: 'grid'
   }

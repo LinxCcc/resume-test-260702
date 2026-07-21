@@ -39,14 +39,14 @@ const moreProjectCovers = [
 
 /* 关于我 */
 export const profile = {
-  name: 'Alex Carter',
-  role: 'Product Manager',
-  phone: '133-0000-0000',
-  email: 'alex.carter@foxmail.com',
-  location: 'Shanghai, China',
-  tagline: 'Building valuable products with clear strategy and elegant user experience.',
+  name: 'Brown Lin',
+  role: '产品经理',
+  identityTags: ['PM', 'ENFJ'],
+  email: 'brown_lin@foxmail.com',
+  location: '上海  ·  远程',
+  tagline: 'FinTech · B2B & B2C\nAi Product Practice',
   intro:
-    '6 years of B2B SaaS product experience, focused on data platforms, collaboration tools and AI-driven business products. Skilled at product strategy, user research, requirement analysis and cross-functional delivery.',
+    '9年产品工作经验，深耕融资租赁、金融及社交领域，具备C端用户产品与B端业务系统设计经验。熟悉产品规划、需求分析、业务流程梳理及项目推进，能够结合业务目标、用户体验与技术实现推动产品落地。\n\n具备交互设计能力和AI辅助产品实践经验，能够使用AI进行需求拆解、方案探索、原型验证，并通过Vibe Coding快速搭建可演示产品原型。熟悉基础数据分析与SQL查询，具备跨团队协作、项目汇报及产品创新能力。',
   portfolio: 'Portfolio',
   github: 'GitHub',
   linkedin: 'LinkedIn',
@@ -62,18 +62,15 @@ export const profile = {
 
 /* 技能标签 */
 export const skills = [
-  'Product Strategy',
-  'PRD Writing',
+  'Vibe Coding',
+  'PRD',
+  'Figma',
+  'UX Design',
   'User Research',
   'Journey Mapping',
   'Data Analysis',
   'SQL',
-  'A/B Testing',
-  'Agile Delivery',
-  'Figma',
-  'Axure',
-  'Jira',
-  'Notion'
+  'Confluence'
 ]
 
 
@@ -86,9 +83,8 @@ export const skills = [
 
 /* 证书 */
 export const certificates = [
-  'PMP Foundation Certificate',
-  'Data Analysis for Product Managers',
-  'UX Research Practice Certificate'
+  '计算机技术与软件专业技术资格（中级）',
+  '教师资格证书'
 ]
 
 
@@ -103,25 +99,32 @@ export const certificates = [
 /* 时间线 */
 export const experiences = [
   {
-    period: '2022.07 - Present',
-    company: 'NovaTech Digital',
-    role: 'Senior Product Manager',
+    period: '2023.07 - 至今',
+    company: '民生金融租赁股份有限公司',
+    role: '产品经理',
     desc:
-      'Led enterprise data product planning and iteration, supporting business dashboards, data permissions and report automation.'
+      '负责汽车融资租赁领域直租、回租、库融产品设计，覆盖租前、租中、租后全生命周期业务，负责 APP、小程序、中后台、租后处置系统等多端产品建设。\n\n熟悉融资租赁核心业务流程，包括预审进件、标的物评估、融资方案、授信审批、视频面签、扣款管理、客户服务及资产处置。具备金融业务流程梳理、系统方案设计、交互设计及产品落地能力，能够推动复杂业务规则向系统能力转化。\n\n负责 B/C 端产品体验优化，围绕客户、业务人员、风控人员、审核人员、处置人员等多角色场景，设计信息架构、业务流程和交互方案，提升业务效率、流程标准化水平和用户体验。'
   },
   {
-    period: '2019.04 - 2022.06',
-    company: 'BrightCloud SaaS',
-    role: 'Product Manager',
+    period: '2022.10 - 2023.06',
+    company: '兴业数字金融服务（上海）股份有限公司',
+    role: '交互设计师',
     desc:
-      'Designed collaboration workflows for enterprise users and improved project delivery efficiency through product optimization.'
+      '参与兴业银行及兴业生活 APP 产品体验设计，负责理财产品、商城系统、组合收银台及数字营销等模块交互设计。围绕金融服务、电商交易、支付流程及运营活动场景，完成需求分析、竞品调研、用户研究、交互方案设计及体验优化，支持产品迭代和业务目标达成。'
   },
   {
-    period: '2017.07 - 2019.03',
-    company: 'Orbit Design Studio',
-    role: 'Product Assistant',
+    period: '2018.08 - 2022.09',
+    company: '上海播呗网络科技有限公司',
+    role: '产品设计主管',
     desc:
-      'Supported requirement analysis, competitor research, prototype design and early-stage product validation.'
+      '负责社交娱乐类移动 APP 产品体验设计及团队管理，聚焦 C 端用户体验优化与商业化产品建设，覆盖秀场直播、社交互动、新产品孵化等业务方向。\n\n参与多款社交类产品从 0-1 孵化及 APP 大版本迭代，围绕用户使用流程、内容消费、互动体验和商业转化场景，负责产品流程梳理、信息架构设计、交互体验优化及版本落地。\n\n深入参与商业化场景建设，负责虚拟礼物、互动玩法、概率小游戏、运营活动及动效设计，通过丰富用户互动方式和消费场景，提升用户参与体验，助力业务营收目标达成。\n\n负责设计团队管理及设计体系建设，搭建设计知识库、规范文档及组件沉淀机制，提升团队协作效率和设计交付质量。'
+  },
+  {
+    period: '2017.07 - 2018.08',
+    company: '中汇信息技术（上海）有限公司',
+    role: '交互设计师',
+    desc:
+      '负责外汇交易类产品及企业内部 OA 系统交互设计工作，参与交易页面、业务流程及后台管理系统设计。\n\n围绕外汇交易场景，负责部分交易页面的信息架构、交互流程和界面优化，提升用户操作体验和交易流程易用性。\n\n负责 OA 系统相关模块设计，参与业务流程梳理、功能页面设计及系统体验优化，支持企业内部业务协同和流程线上化。'
   }
 ]
 
@@ -135,20 +138,16 @@ export const experiences = [
 /* 求职期望 */
 export const jobExpectations = [
   {
-    label: 'Target Role',
-    value: 'Product Manager'
+    label: '目标岗位',
+    value: '产品经理'
   },
   {
-    label: 'Industry',
-    value: 'Internet / SaaS / Enterprise Service'
+    label: '期望行业',
+    value: '金融 / 半导体 / 医疗'
   },
   {
-    label: 'Location',
-    value: 'Shanghai / Hangzhou / Remote'
-  },
-  {
-    label: 'Salary',
-    value: '00K - 99K'
+    label: '工作地点',
+    value: '上海 / 远程'
   }
 ]
 
@@ -330,48 +329,88 @@ export const projects = [
 /* 更多 */
 export const works = [
   {
-    title: 'Smart Home App Design',
-    category: 'UI Design · Mobile App',
+    title: '民生易租 · 客户服务',
+    category: '产品设计 · 租赁服务',
     cover: `url(${moreCover01})`
   },
   {
-    title: 'Illustration Practice',
-    category: 'Illustration Design',
+    title: '民生易租 · 库存融资',
+    category: '产品设计 · 融资服务',
     cover: `url(${moreCover02})`
   },
   {
-    title: 'Admin Dashboard Design',
-    category: 'UI Design · B2B System',
+    title: '民生易租 · 手机端',
+    category: '产品设计 · 移动端',
     cover: `url(${moreCover03})`
   },
   {
-    title: 'Brand Visual Design',
-    category: 'Brand Design',
+    title: '民生易租 · 小微项目',
+    category: '产品设计 · 小微金融',
     cover: `url(${moreCover04})`
   },
   {
-    title: 'Component Library Design',
-    category: 'UI Design',
+    title: '民生易租 · 特权卡',
+    category: '产品设计 · 会员权益',
     cover: `url(${moreCover05})`
   },
   {
-    title: 'Landscape Illustration',
-    category: 'Illustration Design',
+    title: '民生易租 · 特权卡体系',
+    category: '产品设计 · 激励机制',
     cover: `url(${moreCover06})`
   },
   {
-    title: '3D Illustration Design',
-    category: 'Visual Design',
+    title: '民生易租 · 风险监测',
+    category: '产品设计 · 风险管理',
     cover: `url(${moreCover07})`
   },
   {
-    title: 'New Project',
-    category: 'Portfolio Work · Coming Soon',
+    title: '民生易租 · 处置中心',
+    category: '产品设计 · 资产处置',
     cover: `url(${moreCover08})`
   },
-  ...Array.from({ length: 9 }, (_, index) => ({
-    title: `New Project ${String(index + 2).padStart(2, '0')}`,
-    category: 'Portfolio Work · Coming Soon',
-    cover: `url(${moreProjectCovers[index + 8]})`
-  }))
+  {
+    title: '民生易租 · 风控中台',
+    category: '产品设计 · 风控平台',
+    cover: `url(${moreProjectCovers[8]})`
+  },
+  {
+    title: '民生易租 · 快捷待办',
+    category: '产品设计 · 工作台',
+    cover: `url(${moreProjectCovers[9]})`
+  },
+  {
+    title: '民生易租 · 文档管理',
+    category: '产品设计 · 内容管理',
+    cover: `url(${moreProjectCovers[10]})`
+  },
+  {
+    title: '民生易租 · 基本组件',
+    category: '设计系统 · 组件库',
+    cover: `url(${moreProjectCovers[11]})`
+  },
+  {
+    title: '民生易租 · 设计标准',
+    category: '设计系统 · 规范建设',
+    cover: `url(${moreProjectCovers[12]})`
+  },
+  {
+    title: '兴业银行 · 工会商城',
+    category: '产品设计 · 员工服务',
+    cover: `url(${moreProjectCovers[13]})`
+  },
+  {
+    title: '奇乐直播项目',
+    category: '产品设计 · 直播社交',
+    cover: `url(${moreProjectCovers[14]})`
+  },
+  {
+    title: '商业化设计',
+    category: '产品设计 · 权益运营',
+    cover: `url(${moreProjectCovers[15]})`
+  },
+  {
+    title: '视觉设计',
+    category: '视觉设计 · 品牌表达',
+    cover: `url(${moreProjectCovers[16]})`
+  }
 ]

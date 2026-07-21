@@ -53,6 +53,7 @@ button {
   padding: 0 18px 98px;
   overflow-x: hidden;
   background:
+    url('../top_bg.png') top center / 100% auto no-repeat,
     linear-gradient(180deg, #f3f7ff 0%, #edf3fd 46%, #f5f8fe 100%);
   box-shadow: 0 0 60px rgba(15, 107, 255, 0.08);
 }
@@ -201,15 +202,21 @@ button {
   letter-spacing: -1px;
 }
 
+.role-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 12px;
+}
+
 .role-pill {
   display: inline-flex;
-  margin: 10px 0 12px;
   padding: 5px 12px;
   border-radius: 999px;
   color: var(--blue);
   font-size: 12px;
   font-weight: 800;
-  background: var(--blue-light);
+  background: #dce9ff;
 }
 
 .tagline {
@@ -219,6 +226,7 @@ button {
   color: #536072;
   font-size: 13px;
   line-height: 1.7;
+  white-space: pre-line;
 }
 
 .tagline::after {
@@ -306,6 +314,7 @@ button {
   color: #455267;
   font-size: 13px;
   line-height: 1.85;
+  white-space: pre-line;
 }
 
 .skill-list {
@@ -369,7 +378,7 @@ button {
   display: grid;
   grid-template-columns: 18px 1fr;
   gap: 12px;
-  padding-bottom: 20px;
+  padding-bottom: 26px;
 }
 
 .timeline-item:last-child {
@@ -381,7 +390,7 @@ button {
   z-index: 1;
   width: 13px;
   height: 13px;
-  margin-top: 5px;
+  margin-top: 1px;
   border: 3px solid #e8f1ff;
   border-radius: 999px;
   background: var(--blue);
@@ -395,9 +404,11 @@ button {
 }
 
 .period {
-  margin: 0 0 4px;
-  color: #8b96aa;
-  font-size: 11px;
+  margin: 0 0 6px;
+  color: #536072;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .timeline-head h3 {
@@ -412,10 +423,11 @@ button {
 }
 
 .timeline-desc {
-  margin: 8px 0 0;
+  margin: 11px 0 0;
   color: #647086;
   font-size: 12px;
   line-height: 1.7;
+  white-space: pre-line;
 }
 
 .expect-list {
@@ -809,7 +821,7 @@ button {
 }
 
 .contact-row:active {
-  background: #f5f8ff;
+  background: rgba(255, 255, 255, 0.1);
   transform: scale(0.985);
 }
 
@@ -963,18 +975,51 @@ button {
 /* Contact and resume button adjustment */
 
 .contact-card {
+  position: relative;
   padding: 16px;
+  overflow: hidden;
+  border-color: rgba(111, 166, 255, 0.42);
+  background:
+    radial-gradient(circle at 92% 14%, rgba(112, 181, 255, 0.34), transparent 38%),
+    radial-gradient(circle at 10% 110%, rgba(54, 121, 231, 0.34), transparent 44%),
+    linear-gradient(135deg, #0b1f42 0%, #123a77 58%, #1a65c9 138%);
+  box-shadow:
+    0 18px 34px rgba(15, 55, 120, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: -46px;
+  right: -26px;
+  width: 124px;
+  height: 124px;
+  border: 1px solid rgba(71, 137, 242, 0.14);
+  border-radius: 999px;
+  pointer-events: none;
 }
 
 .contact-row {
+  position: relative;
   display: grid;
   grid-template-columns: 28px 1fr 20px;
   column-gap: 8px;
   align-items: center;
   width: 100%;
   min-height: 38px;
-  padding: 6px 4px;
+  padding: 7px 6px;
   text-align: left;
+}
+
+.contact-row:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 6px;
+  bottom: 0;
+  left: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(190, 219, 255, 0.06), rgba(214, 233, 255, 0.36), transparent);
 }
 
 .contact-row p {
@@ -982,7 +1027,7 @@ button {
   width: 100%;
   margin: 0;
   text-align: left;
-  color: #2f3a4f;
+  color: #f4f8ff;
   font-size: 13px;
   line-height: 1.4;
 }
@@ -991,6 +1036,15 @@ button {
   width: 26px;
   height: 26px;
   flex: 0 0 26px;
+  color: #c5e0ff;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    inset 0 0 0 1px rgba(211, 233, 255, 0.16),
+    0 4px 10px rgba(0, 22, 59, 0.12);
+}
+
+.contact-copy-icon {
+  color: #bdd9ff;
 }
 
 .base-icon {
@@ -2024,11 +2078,11 @@ button {
 .bottom-nav {
   bottom: 12px;
   left: 50%;
-  width: min(calc(100% - 32px), 398px);
-  height: 72px;
-  padding: 8px 12px;
+  width: min(calc(100% - 28px), 398px);
+  height: 70px;
+  padding: 7px 8px;
   border: 1px solid rgba(223, 232, 246, 0.86);
-  border-radius: 36px;
+  border-radius: 26px;
   background: rgba(255, 255, 255, 0.9);
   box-shadow:
     0 18px 44px rgba(7, 18, 38, 0.1),
@@ -2040,10 +2094,11 @@ button {
 .nav-item {
   position: relative;
   display: grid;
-  grid-template-rows: 32px 16px;
+  grid-template-rows: 34px 14px;
   gap: 3px;
   place-items: center;
-  border-radius: 20px;
+  border-radius: 18px;
+  isolation: isolate;
 }
 
 .nav-label {
@@ -2055,9 +2110,9 @@ button {
   position: relative;
   display: grid;
   place-items: center;
-  width: 34px;
-  height: 32px;
-  border-radius: 16px;
+  width: 38px;
+  height: 34px;
+  border-radius: 14px;
   color: #94a0b3;
   background: transparent;
   transition:
@@ -2079,12 +2134,26 @@ button {
   color: var(--blue);
 }
 
+.nav-item.active::before {
+  content: '';
+  position: absolute;
+  inset: 0 3px;
+  z-index: -1;
+  border: 1px solid rgba(129, 180, 255, 0.28);
+  border-radius: 17px;
+  background:
+    linear-gradient(135deg, rgba(234, 244, 255, 0.96), rgba(221, 237, 255, 0.72));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 7px 15px rgba(31, 111, 232, 0.08);
+}
+
 .nav-item.active .nav-icon {
   color: #ffffff;
   background:
-    linear-gradient(135deg, #071226 0%, #0f6bff 100%);
-  box-shadow: 0 12px 26px rgba(15, 107, 255, 0.25);
-  transform: translateY(-5px);
+    linear-gradient(135deg, #1557bb 0%, #3384ff 100%);
+  box-shadow: 0 9px 18px rgba(31, 108, 235, 0.22);
+  transform: translateY(-3px);
 }
 
 .nav-item.active .nav-label {
@@ -2093,13 +2162,7 @@ button {
 }
 
 .nav-item.active::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  width: 5px;
-  height: 5px;
-  border-radius: 999px;
-  background: var(--blue);
+  display: none;
 }
 
 .nav-item:active .nav-icon {
@@ -2107,7 +2170,7 @@ button {
 }
 
 .nav-item.active:active .nav-icon {
-  transform: translateY(-5px) scale(0.94);
+  transform: translateY(-3px) scale(0.94);
 }
 
 /* Better page header spacing */
@@ -2142,22 +2205,22 @@ button {
 /* Contact copy success state */
 
 .contact-row.copied {
-  background: #edf5ff;
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .contact-row.copied .contact-icon {
-  color: #ffffff;
-  background: var(--blue);
-  box-shadow: 0 10px 22px rgba(15, 107, 255, 0.22);
+  color: #0f4eaa;
+  background: #ffffff;
+  box-shadow: 0 8px 18px rgba(0, 20, 58, 0.16);
 }
 
 .contact-row.copied p {
-  color: var(--blue);
+  color: #ffffff;
   font-weight: 700;
 }
 
 .contact-row.copied .contact-copy-icon {
-  color: var(--blue);
+  color: #ffffff;
 }
 
 .contact-row.copied i {
@@ -2270,6 +2333,7 @@ button {
 
 .dark-theme .app-shell {
   background:
+    url('../top_bg.png') top center / 100% auto no-repeat,
     linear-gradient(180deg, rgba(10, 20, 38, 0.98) 0%, #071226 48%, #08111f 100%);
   box-shadow: 0 0 70px rgba(0, 0, 0, 0.32);
 }
@@ -2350,6 +2414,7 @@ button {
 .dark-theme .result-grid span,
 .dark-theme .contact-row p,
 .dark-theme .skill-list li,
+.dark-theme .period,
 .dark-theme .timeline-head strong,
 .dark-theme .expect-item strong {
   color: #a7b3c7;
@@ -2364,6 +2429,10 @@ button {
 .dark-theme .preview-content span {
   color: #7db0ff;
   background: rgba(93, 156, 255, 0.14);
+}
+
+.dark-theme .role-pill {
+  background: rgba(93, 156, 255, 0.2);
 }
 
 .dark-theme .project-toggle {
@@ -2414,6 +2483,23 @@ button {
   background: rgba(93, 156, 255, 0.12);
 }
 
+.dark-theme .contact-card {
+  border-color: rgba(96, 165, 250, 0.24);
+  background:
+    radial-gradient(circle at 92% 14%, rgba(59, 130, 246, 0.2), transparent 38%),
+    linear-gradient(135deg, rgba(20, 42, 76, 0.96), rgba(17, 35, 65, 0.92));
+}
+
+.dark-theme .contact-row:not(:last-child)::after {
+  background: linear-gradient(90deg, rgba(96, 165, 250, 0.06), rgba(96, 165, 250, 0.32), transparent);
+}
+
+.dark-theme .contact-icon {
+  color: #96c1ff;
+  background: rgba(96, 165, 250, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(147, 197, 253, 0.12);
+}
+
 .dark-theme .contact-row.copied p {
   color: #7db0ff;
 }
@@ -2423,6 +2509,10 @@ button {
 .dark-theme .refined-result-grid {
   border-color: rgba(148, 163, 184, 0.12);
   background: rgba(15, 23, 42, 0.82);
+}
+
+.dark-theme .certificate-list p {
+  color: #d5deeb;
 }
 
 .dark-theme .timeline::before {
@@ -2455,6 +2545,14 @@ button {
   background:
     linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
   box-shadow: 0 12px 28px rgba(93, 156, 255, 0.26);
+}
+
+.dark-theme .nav-item.active::before {
+  border-color: rgba(96, 165, 250, 0.22);
+  background: linear-gradient(135deg, rgba(30, 58, 112, 0.7), rgba(25, 53, 103, 0.45));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 8px 18px rgba(0, 0, 0, 0.16);
 }
 
 .dark-theme .nav-item.active .nav-label {

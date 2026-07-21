@@ -15,7 +15,11 @@
 
         <div class="hero-info">
           <h1>{{ profile.name }}</h1>
-          <p class="role-pill">{{ profile.role }}</p>
+          <div class="role-tags">
+            <span v-for="tag in profile.identityTags" :key="tag" class="role-pill">
+              {{ tag }}
+            </span>
+          </div>
           <p class="tagline">{{ profile.tagline }}</p>
         </div>
       </div>
@@ -40,21 +44,11 @@
         />
         </button>
 
-        <button class="resume-action" type="button" @click="handleResumeDownload">
-        <span class="resume-icon">
-          <BaseIcon name="download" />
-        </span>
-        <span class="resume-text">
-            <strong>Download Resume</strong>
-            <em>PDF version · Tap to download</em>
-        </span>
-        <i>→</i>
-        </button>
     </section>
 
     <section class="card section-card about-card">
       <div class="section-title">
-        <h2>Desc</h2>
+        <h2>个人简介</h2>
         <span><BaseIcon name="profile" /></span>
       </div>
 
@@ -76,7 +70,7 @@
 
     <section class="card section-card">
       <div class="section-title">
-        <h2>Certificate</h2>
+        <h2>相关证书</h2>
         <span><BaseIcon name="award" /></span>
       </div>
 
@@ -89,7 +83,7 @@
 
     <section class="card section-card">
       <div class="section-title">
-        <h2>Timeline</h2>
+        <h2>我的经历</h2>
         <span><BaseIcon name="briefcase" /></span>
       </div>
 
@@ -119,7 +113,7 @@
 
     <section class="card section-card">
       <div class="section-title">
-        <h2>Job Goal</h2>
+        <h2>我的期望</h2>
         <span><BaseIcon name="target" /></span>
       </div>
 
@@ -163,11 +157,6 @@ const copiedLabel = ref('')
 
 const contactItems = [
   {
-    label: 'Phone',
-    icon: 'phone',
-    value: profile.phone
-  },
-  {
     label: 'Email',
     icon: 'mail',
     value: profile.email
@@ -205,25 +194,6 @@ const contactItems = [
     message: 'Resume download is coming soon'
   }
 ] */
-const RESUME_FILE = '/resume.pdf'
-
-const handleResumeDownload = () => {
-  const link = document.createElement('a')
-
-  link.href = RESUME_FILE
-
-  /* 下载的PDF文件名 */
-  link.download = 'Alex-Carter-Resume.pdf'
-
-  document.body.appendChild(link)
-  link.click()
-  document.body.removeChild(link)
-
-  showToast('Resume download started')
-}
-
-
-
 const showToast = (text) => {
   toastText.value = text
 
