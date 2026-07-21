@@ -159,7 +159,7 @@ import ex07Cover from '../assets/experience/ex-07.jpg'
 import ex08Cover from '../assets/experience/ex-08.jpg'
 import ex09Cover from '../assets/experience/ex-09.jpg'
 
-const activeProjectIndex = ref(0)
+const activeProjectIndex = ref(-1)
 const projectCoverImages = [
   ex01Cover,
   ex02Cover,

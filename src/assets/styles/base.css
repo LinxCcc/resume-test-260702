@@ -2333,6 +2333,7 @@ button {
 
 .dark-theme .app-shell {
   background:
+    linear-gradient(rgba(7, 18, 38, 0.5), rgba(7, 18, 38, 0.5)),
     url('../top_bg.png') top center / 100% auto no-repeat,
     linear-gradient(180deg, rgba(10, 20, 38, 0.98) 0%, #071226 48%, #08111f 100%);
   box-shadow: 0 0 70px rgba(0, 0, 0, 0.32);
