@@ -12,19 +12,6 @@
       </div>
     </header>
 
-    <section class="more-hero card">
-      <div>
-        <span class="more-label">Design Collection</span>
-        <h2>Selected explorations across product, visual and interaction design.</h2>
-      </div>
-
-      <div class="more-hero-icon" aria-hidden="true">
-        <span class="design-badge-dot"></span>
-        <span class="design-badge-line"></span>
-        <span class="design-badge-line short"></span>
-      </div>
-    </section>
-
     <section class="work-list refined-work-list">
       <article
         v-for="(work, index) in works"

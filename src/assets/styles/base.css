@@ -1713,117 +1713,6 @@ button {
   opacity: 0.78;
 }
 
-.more-hero {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 58px;
-  gap: 16px;
-  align-items: center;
-  min-height: 132px;
-  margin-bottom: 20px;
-  padding: 20px;
-  border: 1px solid rgba(221, 232, 248, 0.98);
-  background:
-    radial-gradient(circle at 12% 0%, rgba(15, 107, 255, 0.08), transparent 34%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 251, 255, 0.93));
-  box-shadow:
-    0 18px 44px rgba(15, 107, 255, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.86);
-  overflow: hidden;
-}
-
-.more-hero::after {
-  content: '';
-  position: absolute;
-  right: -54px;
-  bottom: -58px;
-  width: 142px;
-  height: 142px;
-  border-radius: 999px;
-  background:
-    radial-gradient(circle, rgba(15, 107, 255, 0.1), rgba(15, 107, 255, 0) 68%);
-}
-
-.more-label {
-  display: inline-flex;
-  margin-bottom: 11px;
-  padding: 6px 10px;
-  border: 1px solid rgba(15, 107, 255, 0.1);
-  border-radius: 999px;
-  color: var(--blue);
-  font-size: 11px;
-  font-weight: 800;
-  background:
-    linear-gradient(180deg, rgba(239, 246, 255, 0.98), rgba(225, 237, 255, 0.82));
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.82);
-}
-
-.more-hero h2 {
-  position: relative;
-  z-index: 2;
-  margin: 0;
-  color: #243044;
-  font-size: 17px;
-  line-height: 1.5;
-  letter-spacing: -0.2px;
-}
-
-.more-hero-icon {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  place-items: center;
-  width: 58px;
-  height: 58px;
-  border-radius: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.42);
-  background:
-    radial-gradient(circle at 28% 22%, rgba(255, 255, 255, 0.54), transparent 24%),
-    linear-gradient(135deg, #071226 0%, #0f6bff 100%);
-  box-shadow:
-    0 16px 32px rgba(15, 107, 255, 0.22),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  overflow: hidden;
-}
-
-.more-hero-icon::after {
-  content: '';
-  position: absolute;
-  right: -14px;
-  bottom: -14px;
-  width: 38px;
-  height: 38px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.design-badge-dot {
-  position: absolute;
-  left: 17px;
-  top: 16px;
-  width: 9px;
-  height: 9px;
-  border-radius: 999px;
-  background: #ffffff;
-  box-shadow: 17px 0 0 rgba(255, 255, 255, 0.48);
-}
-
-.design-badge-line {
-  position: absolute;
-  left: 16px;
-  bottom: 22px;
-  width: 28px;
-  height: 6px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.9);
-}
-
-.design-badge-line.short {
-  bottom: 13px;
-  width: 19px;
-  background: rgba(255, 255, 255, 0.5);
-}
-
 .refined-work-list {
   display: grid;
   gap: 14px;
@@ -2054,18 +1943,6 @@ button {
     inset 0 1px 0 rgba(255, 255, 255, 0.18);
   cursor: pointer;
 }
-
-@media (max-width: 380px) {
-  .more-hero {
-    grid-template-columns: 1fr;
-  }
-
-  .more-hero-icon {
-    display: none;
-  }
-
-}
-
 
 /* BottomNav样式 */
 /* Global mobile app refinement */
@@ -2349,8 +2226,7 @@ button {
 .dark-theme .contact-card,
 .dark-theme .project-item,
 .dark-theme .summary-item,
-.dark-theme .refined-work-card,
-.dark-theme .more-hero {
+.dark-theme .refined-work-card {
   border-color: rgba(148, 163, 184, 0.16);
   background: rgba(25, 39, 62, 0.88);
   box-shadow: 0 20px 52px rgba(0, 0, 0, 0.28);
@@ -2365,21 +2241,6 @@ button {
   box-shadow:
     0 20px 52px rgba(0, 0, 0, 0.28),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
-}
-
-.dark-theme .more-hero {
-  border-color: rgba(148, 163, 184, 0.18);
-  background:
-    radial-gradient(circle at 12% 0%, rgba(93, 156, 255, 0.16), transparent 34%),
-    linear-gradient(180deg, rgba(31, 45, 69, 0.92), rgba(20, 34, 56, 0.9));
-  box-shadow:
-    0 20px 52px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
-}
-
-.dark-theme .more-hero::after {
-  background:
-    radial-gradient(circle, rgba(93, 156, 255, 0.14), rgba(93, 156, 255, 0) 68%);
 }
 
 .dark-theme .project-item.active {
@@ -2404,7 +2265,6 @@ button {
 .dark-theme .timeline-head h3,
 .dark-theme .project-title-row h2,
 .dark-theme .refined-work-info h2,
-.dark-theme .more-hero h2,
 .dark-theme .preview-content h2 {
   color: #f8fafc;
 }
@@ -2429,7 +2289,6 @@ button {
 .dark-theme .role-pill,
 .dark-theme .section-title span,
 .dark-theme .tag-row span,
-.dark-theme .more-label,
 .dark-theme .project-toggle,
 .dark-theme .refined-work-info button,
 .dark-theme .preview-content span {
@@ -2511,10 +2370,34 @@ button {
 }
 
 .dark-theme .certificate-list p,
-.dark-theme .expect-item,
-.dark-theme .refined-result-grid {
+.dark-theme .expect-item {
   border-color: rgba(148, 163, 184, 0.12);
   background: rgba(15, 23, 42, 0.82);
+}
+
+.dark-theme .refined-result-grid {
+  border-color: rgba(125, 176, 255, 0.2);
+  background:
+    linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(15, 23, 42, 0.9) 58%),
+    rgba(15, 23, 42, 0.88);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 10px 26px rgba(0, 0, 0, 0.14);
+}
+
+.dark-theme .refined-result-grid strong {
+  color: #7db0ff;
+}
+
+.dark-theme .refined-result-grid div + div::before {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(125, 176, 255, 0),
+      rgba(125, 176, 255, 0.32) 22%,
+      rgba(148, 163, 184, 0.22) 78%,
+      rgba(148, 163, 184, 0)
+    );
 }
 
 .dark-theme .certificate-list p {
@@ -2593,8 +2476,7 @@ button {
 .dark-theme .resume-action,
 .dark-theme .preview-action,
 .dark-theme .project-total,
-.dark-theme .more-total,
-.dark-theme .more-hero-icon {
+.dark-theme .more-total {
   background:
     linear-gradient(135deg, #1d4ed8 0%, #2563eb 58%, #60a5fa 100%);
 }

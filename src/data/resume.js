@@ -161,71 +161,110 @@ export const jobExpectations = [
 
 /* 项目经历 */
 export const projects = [
-  {
-    title: '融资租赁业务对客小程序',
-    tags: ['2C', 'Mini Program', '租后'],
-    cover: 'linear-gradient(135deg, #dfeaff 0%, #f8fbff 48%, #7aa7ff 100%)',
+    {
+    title: '融资租赁业务进件系统前台',
+    tags: ['B2C', 'APP', '进件系统', '租前'],
+    cover: 'linear-gradient(135deg, #101b36 0%, #0f4fe8 52%, #6fb5ff 100%)',
     desc:
-      '1. 围绕租后客户服务场景，设计客户身份识别、订单/账单查询、业务申请提交、资料上传及结果反馈等流程，打通 C 端客户操作与 B 端业务处理链路，提升客户服务线上化和自助化水平，减少人工客服及运营介入成本。\n\n2.负责远程水印照片、自助开票、延展期申请、扣款方式变更等高频功能设计，提升客户办理效率、服务透明度及租后管理数字化能力。\n',
+      '1. 负责预审能力建设，覆盖客户信息采集、征信授权、车辆信息录入、资料上传、独立预审及支付宝预审流程衔接等场景，沉淀标准化进件数据，为前期质控、风险识别及后续授信审批提供数据基础。\n\n2. 负责二手车标的物评估能力建设，对接外部车辆估值服务商，支持租前购车、回租场景下的标的物估值，以及租后处置阶段的车辆价值评估，为租前风险判断、预授信融资额度测算、租后资产管理及处置决策提供数据支撑。\n\n3. 负责融资方案提报及授信审批模块设计，承接风控策略结果，支持额度秒批、多种增信融资方案、人工授信审批任务流转、审批意见记录及审批结果回传，实现风控策略、融资方案与人工审批流程的系统化衔接。\n\n4. 负责视频面签模块设计，支持客户远程确认办理意愿、业务信息核验、视频留痕及面签结果回传，提升融资租赁线上办理合规性和关键流程可追溯性。\n\n5. 负责扣款模块设计，对接中国银联、网商银行、支付宝等支付及扣款通道，支持租金扣款、还款结果回传、扣款状态跟踪及异常处理，提升资金扣划流程的自动化和稳定性。',
+    detail: {
+      label: 'Contribution Snapshot',
+      title: 'What I drove in this project',
+      items: [
+        { label: 'Role', value: 'Product Planning / Requirement Analysis' },
+        { label: 'Method', value: 'User Research / Data Analysis / Agile Delivery' },
+        { label: 'Output', value: 'PRD / Prototype / Roadmap' }
+      ]
+    },
     results: [
       {
-        value: '30%',
-        label: 'Efficiency Increase'
+        value: '80%+',
+        label: '自动审批率'
       },
       {
-        value: '20%',
-        label: 'Cost Reduction'
+        value: '20B+',
+        label: '累计投放量'
       }
     ]
   },
+
   {
     title: '融资租赁业务管理中后台',
     tags: ['B2B', 'Web', '核心业务系统', '租中租后'],
     cover: 'linear-gradient(135deg, #f3f7ff 0%, #b9d2ff 52%, #1267ff 100%)',
     desc:
       '1. 负责费用结算模块设计，支持不同费用类型下的费用申请、审核、结算、财务分录生成及对账处理，提升业务费用管理规范性和财务处理效率。\n\n2. 负责文档下载中心设计，支持文件集中存储、异步加水印、客户敏感数据脱敏、下载查阅鉴权及大文件上传下载，提升资料管理合规性及跨系统流转效率。\n',
+    detail: {
+      label: 'Contribution Snapshot',
+      title: 'What I drove in this project',
+      items: [
+        { label: 'Role', value: 'Product Planning / Requirement Analysis' },
+        { label: 'Method', value: 'User Research / Data Analysis / Agile Delivery' },
+        { label: 'Output', value: 'PRD / Prototype / Roadmap' }
+      ]
+    },
     results: [
       {
-        value: '25%',
-        label: 'Active Users Growth'
+        value: '500+',
+        label: '月活业务人员'
       },
       {
-        value: '15%',
-        label: 'Satisfaction Growth'
+        value: '40w+',
+        label: '累计业务单量'
       }
     ]
   },
+
   {
-    title: '融资租赁业务进件系统前台',
-    tags: ['B2C', 'APP', '进件系统', '租前'],
-    cover: 'linear-gradient(135deg, #101b36 0%, #0f4fe8 52%, #6fb5ff 100%)',
+    title: '融资租赁业务对客小程序',
+    tags: ['2C', 'Mini Program', '租后'],
+    cover: 'linear-gradient(135deg, #dfeaff 0%, #f8fbff 48%, #7aa7ff 100%)',
     desc:
-      '1. 负责预审能力建设，覆盖客户信息采集、征信授权、车辆信息录入、资料上传、独立预审及支付宝预审流程衔接等场景，沉淀标准化进件数据，为前期质控、风险识别及后续授信审批提供数据基础。\n\n2. 负责二手车标的物评估能力建设，对接外部车辆估值服务商，支持租前购车、回租场景下的标的物估值，以及租后处置阶段的车辆价值评估，为租前风险判断、预授信融资额度测算、租后资产管理及处置决策提供数据支撑。\n\n3. 负责融资方案提报及授信审批模块设计，承接风控策略结果，支持额度秒批、多种增信融资方案、人工授信审批任务流转、审批意见记录及审批结果回传，实现风控策略、融资方案与人工审批流程的系统化衔接。\n\n4. 负责视频面签模块设计，支持客户远程确认办理意愿、业务信息核验、视频留痕及面签结果回传，提升融资租赁线上办理合规性和关键流程可追溯性。\n\n5. 负责扣款模块设计，对接中国银联、网商银行、支付宝等支付及扣款通道，支持租金扣款、还款结果回传、扣款状态跟踪及异常处理，提升资金扣划流程的自动化和稳定性。',
+      '1. 围绕租后客户服务场景，设计客户身份识别、订单/账单查询、业务申请提交、资料上传及结果反馈等流程，打通 C 端客户操作与 B 端业务处理链路，提升客户服务线上化和自助化水平，减少人工客服及运营介入成本。\n\n2.负责远程水印照片、自助开票、延展期申请、扣款方式变更等高频功能设计，提升客户办理效率、服务透明度及租后管理数字化能力。\n',
+    detail: {
+      label: 'Contribution Snapshot',
+      title: 'What I drove in this project',
+      items: [
+        { label: 'Role', value: 'Product Planning / Requirement Analysis' },
+        { label: 'Method', value: 'User Research / Data Analysis / Agile Delivery' },
+        { label: 'Output', value: 'PRD / Prototype / Roadmap' }
+      ]
+    },
     results: [
       {
-        value: '40%',
-        label: 'Accuracy Growth'
+        value: '20w+',
+        label: '累计服务人次'
       },
       {
-        value: '35%',
-        label: 'Decision Efficiency'
+        value: ' ',
+        label: ' '
       }
     ]
   },
+
   {
     title: '海外跨境支付平台项目',
     tags: ['B2B', 'SaaS'],
     cover: 'linear-gradient(135deg, #ffffff 0%, #d9e7ff 48%, #4f8dff 100%)',
     desc:
       '1. 负责海外本地支付产品多端交互设计，覆盖 Agent 端、Merchant 商户端、支付收银台、SaaS 管理平台及白标商户后台等核心产品形态。围绕海外支付场景下商户入驻、支付方式配置、交易管理、订单查询、退款处理、对账结算、运营管理等业务流程，梳理多角色业务关系与操作链路，完成信息架构、交互流程、页面设计及组件规范建设。\n\n2. 针对不同角色（渠道代理商、商户运营人员、终端用户、平台管理员）的使用需求，设计差异化产品体验，优化支付流程中的状态反馈、异常处理、数据展示及运营效率，提升多国家、多支付渠道场景下产品易用性与业务支撑能力。\n',
+    detail: {
+      label: 'Contribution Snapshot',
+      title: 'What I drove in this project',
+      items: [
+        { label: 'Role', value: 'UX Design / Requirement Analysis' },
+        { label: 'Method', value: 'Workflow & Information Architecture' },
+        { label: 'Output', value: 'Prototype / Design System / User Interface' }
+      ]
+    },
     results: [
       {
-        value: '18%',
-        label: 'Inventory Turnover'
+        value: '4套',
+        label: '核心系统'
       },
       {
-        value: '22%',
-        label: 'Logistics Efficiency'
+        value: '4种',
+        label: '支持支付方式'
       }
     ]
   },
@@ -234,49 +273,66 @@ export const projects = [
     tags: ['AI Product', 'Design System'],
     cover: 'linear-gradient(135deg, #fff7ed 0%, #dbeafe 48%, #2563eb 100%)',
     desc:
-      'Explored AI-assisted design workflows, helping teams refine layouts, copy and reusable components.',
+      '负责融资租赁业务前中后台产品交互设计，覆盖 民生易租APP、微信小程序、中后台业务系统、租后处置系统及风控系统等多端产品形态，围绕客户申请、业务办理、风控审批、客户自助服务、催收保全、法诉拍卖等场景，完成信息架构、页面流程、原型设计、操作路径及关键交互细节设计。\n\n通过梳理不同端、不同角色、不同业务节点之间的流程关系，设计客户侧、业务侧、审核侧、风控侧及处置侧的系统交互方案，提升业务流程线上化、操作标准化、任务流转可视化和跨角色协同效率。\n',
+    detail: {
+      label: 'Contribution Snapshot',
+      title: 'What I drove in this project',
+      items: [
+        { label: 'Role', value: 'UX Design / Requirement Analysis' },
+        { label: 'Method', value: 'Workflow & Information Architecture' },
+        { label: 'Output', value: 'Prototype / Design System' }
+      ]
+    },
     results: [
       {
-        value: '36%',
-        label: 'Design Efficiency'
+        value: '10类',
+        label: '覆盖业务场景'
       },
       {
-        value: '18%',
-        label: 'Iteration Speed'
+        value: '3套',
+        label: '建设交互规范'
       }
     ]
   },
   {
-    title: '兴业手机银行生活商城',
+    title: '兴业手机银行生活商城项目',
     tags: ['2C', 'APP'],
     cover: 'linear-gradient(135deg, #fff7ed 0%, #dbeafe 52%, #2563eb 100%)',
     desc:
-      '负责银行 APP 内商城模块交互设计，围绕用户购物及交易流程，覆盖商城首页、商品列表、商品详情、订单流程、收银台支付等核心场景，优化用户浏览、决策、下单及支付体验，提升银行 APP 内商业化服务能力。',
-    results: [
-      {
-        value: '28%',
-        label: 'Conversion Growth'
-      },
-      {
-        value: '16%',
-        label: 'Drop-off Reduction'
-      }
-    ]
+      '负责银行 APP 内商城模块交互设计，围绕用户购物及交易流程，覆盖商城首页、商品列表、商品详情、订单流程、收银台支付等核心场景，优化用户浏览、决策、下单及支付体验，提升银行 APP 内商业化服务能力。\n\n',
+    detail: {
+      label: 'Contribution Snapshot',
+      title: 'What I drove in this project',
+      items: [
+        { label: 'Role', value: 'PUX Design / Requirement Analysis' },
+        { label: 'Method', value: 'Workflow & Information Architecture' },
+        { label: 'Output', value: 'Prototype / Design System' }
+      ]
+    }
   },
   {
-    title: '奇乐直播',
+    title: '社交产品用户体验与商业化',
     tags: ['2C', 'APP', 'Live', 'Social'],
     cover: 'linear-gradient(135deg, #eff6ff 0%, #bfdbfe 50%, #1d4ed8 100%)',
     desc:
-      '负责亿级月流水产品体验设计及设计团队管理，主导 APP 大版本体验升级，覆盖用户端核心页面、直播互动场景、小游戏及运营活动、虚拟礼物及动效体系设计。围绕信息浏览、直播互动、消费转化等核心链路，推动产品体验优化及商业化能力建设。',
+      '负责亿级月流水产品体验设计及设计团队管理，主导 APP 大版本体验升级，覆盖用户端核心页面、直播互动场景、小游戏及运营活动、虚拟礼物及动效体系设计。围绕信息浏览、直播互动、消费转化等核心链路，推动产品体验优化及商业化能力建设。\n',
+    detail: {
+      label: 'Contribution Snapshot',
+      title: 'What I drove in this project',
+      items: [
+        { label: 'Role', value: 'Design Lead' },
+        { label: 'Method', value: 'Workflow & Information Architecture' },
+        { label: 'Output', value: 'Prototype / Design System / User Interface / Motion Design' }
+      ]
+    },
     results: [
       {
-        value: '35%',
-        label: 'Engagement Growth'
+        value: '+15%',
+        label: '游戏付费率'
       },
       {
-        value: '24%',
-        label: 'Retention Increase'
+        value: '+30%',
+        label: '虚拟产品消耗'
       }
     ]
   },
@@ -285,34 +341,32 @@ export const projects = [
     tags: ['FinTech', 'Trading'],
     cover: 'linear-gradient(135deg, #f8fafc 0%, #dbeafe 48%, #0f172a 100%)',
     desc:
-      '参与外汇交易平台相关体验设计，围绕用户交易操作流程，负责交易页面的信息展示、交互流程优化及界面体验设计，提升用户操作便捷性。',
-    results: [
-      {
-        value: '32%',
-        label: 'Decision Efficiency'
-      },
-      {
-        value: '21%',
-        label: 'Task Speed Growth'
-      }
-    ]
+      '参与外汇交易平台相关体验设计，围绕用户交易操作流程，负责交易页面的信息展示、交互流程优化及界面体验设计，提升用户操作便捷性。\n\n',
+    detail: {
+      label: 'Contribution Snapshot',
+      title: 'What I drove in this project',
+      items: [
+        { label: 'Role', value: 'UX Design / Requirement Analysis' },
+        { label: 'Method', value: 'Workflow & Information Architecture' },
+        { label: 'Output', value: 'Prototype / User Interface' }
+      ]
+    }
   },
   {
     title: '企业内部OA项目',
     tags: ['OA', 'Workflow'],
     cover: 'linear-gradient(135deg, #f3f7ff 0%, #dbeafe 48%, #2563eb 100%)',
     desc:
-      '参与企业内部 OA 系统产品设计，围绕员工办公、流程审批、信息管理等场景，负责系统页面交互设计和体验优化，支持企业内部流程线上化。',
-    results: [
-      {
-        value: '45%',
-        label: 'Approval Speed'
-      },
-      {
-        value: '30%',
-        label: 'Manual Work Reduction'
-      }
-    ]
+      '参与企业内部 OA 系统产品设计，围绕员工办公、流程审批、信息管理等场景，负责系统页面交互设计和体验优化，支持企业内部流程线上化。\n\n',
+    detail: {
+      label: 'Contribution Snapshot',
+      title: 'What I drove in this project',
+      items: [
+        { label: 'Role', value: 'UX Design / Requirement Analysis' },
+        { label: 'Method', value: 'Workflow & Information Architecture' },
+        { label: 'Output', value: 'Prototype / User Interface' }
+      ]
+    }
   }
 ]
 
@@ -329,26 +383,18 @@ export const projects = [
 /* 更多 */
 export const works = [
   {
-    title: '民生易租 · 客户服务',
-    category: '产品设计 · 租赁服务',
-    cover: `url(${moreCover01})`
-  },
-  {
-    title: '民生易租 · 库存融资',
-    category: '产品设计 · 融资服务',
-    cover: `url(${moreCover02})`
-  },
-  {
     title: '民生易租 · 手机端',
     category: '产品设计 · 移动端',
     cover: `url(${moreCover03})`
   },
+
   {
-    title: '民生易租 · 小微项目',
-    category: '产品设计 · 小微金融',
-    cover: `url(${moreCover04})`
+    title: '民生易租 · 客户服务',
+    category: '产品设计 · 租赁服务',
+    cover: `url(${moreCover01})`
   },
-  {
+
+    {
     title: '民生易租 · 特权卡',
     category: '产品设计 · 会员权益',
     cover: `url(${moreCover05})`
@@ -358,6 +404,20 @@ export const works = [
     category: '产品设计 · 激励机制',
     cover: `url(${moreCover06})`
   },
+
+  {
+    title: '民生易租 · 小微项目',
+    category: '产品设计 · 小微金融',
+    cover: `url(${moreCover04})`
+  },
+
+  {
+    title: '民生易租 · 库存融资',
+    category: '产品设计 · 融资服务',
+    cover: `url(${moreCover02})`
+  },
+
+
   {
     title: '民生易租 · 风险监测',
     category: '产品设计 · 风险管理',

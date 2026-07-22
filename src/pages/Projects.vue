@@ -14,17 +14,17 @@
 
     <section class="project-summary">
       <div class="summary-item">
-        <strong>6+</strong>
+        <strong>9</strong>
         <span>Years Experience</span>
       </div>
 
       <div class="summary-item">
-        <strong>12+</strong>
+        <strong>10+</strong>
         <span>Delivered Projects</span>
       </div>
 
       <div class="summary-item">
-        <strong>B2B</strong>
+        <strong>B2B & B2C</strong>
         <span>Main Direction</span>
       </div>
     </section>
@@ -95,7 +95,10 @@
 
           <p>{{ project.desc }}</p>
 
-          <div class="result-grid refined-result-grid">
+          <div
+            v-if="project.results?.length"
+            class="result-grid refined-result-grid"
+          >
             <div v-for="result in project.results" :key="result.label">
               <strong>{{ result.value }}</strong>
               <span>{{ result.label }}</span>
@@ -108,24 +111,18 @@
               class="project-detail-panel"
             >
               <div class="detail-panel-head">
-                <span>Contribution Snapshot</span>
-                <strong>What I drove in this project</strong>
+                <span>{{ project.detail.label }}</span>
+                <strong>{{ project.detail.title }}</strong>
               </div>
 
               <div class="detail-list">
-                <div class="detail-row">
-                  <span>Role</span>
-                  <strong>Product Planning / Requirement Analysis</strong>
-                </div>
-
-                <div class="detail-row">
-                  <span>Method</span>
-                  <strong>User Research / Data Analysis / Agile Delivery</strong>
-                </div>
-
-                <div class="detail-row">
-                  <span>Output</span>
-                  <strong>PRD / Prototype / Roadmap / Growth Review</strong>
+                <div
+                  v-for="item in project.detail.items"
+                  :key="item.label"
+                  class="detail-row"
+                >
+                  <span>{{ item.label }}</span>
+                  <strong>{{ item.value }}</strong>
                 </div>
               </div>
             </div>
@@ -161,9 +158,9 @@ import ex09Cover from '../assets/experience/ex-09.jpg'
 
 const activeProjectIndex = ref(-1)
 const projectCoverImages = [
-  ex01Cover,
-  ex02Cover,
   ex03Cover,
+  ex02Cover,
+  ex01Cover,
   ex04Cover,
   ex09Cover,
   ex05Cover,
