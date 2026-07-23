@@ -2,14 +2,14 @@
   <div class="app-shell">
     <Transition name="splash-fade">
       <div v-if="isLoading" class="splash-screen">
-        <div class="splash-logo">
-          AC
+        <div class="splash-avatar">
+          <img :src="avatarImage" :alt="`${profile.name} avatar`">
         </div>
 
-        <h1>Alex Carter</h1>
-        <p>Product Manager Portfolio</p>
+        <h1>请稍等</h1>
+        <p>My Portfolio</p>
 
-        <div class="splash-progress">
+        <div class="splash-progress" aria-hidden="true">
           <span></span>
         </div>
       </div>
@@ -45,6 +45,8 @@
 import { onMounted, ref, watch } from 'vue'
 import BaseIcon from './components/common/BaseIcon.vue'
 import BottomNav from './components/common/BottomNav.vue'
+import { profile } from './data/resume'
+import avatarImage from './assets/avatar.png'
 
 const isDark = ref(false)
 const isLoading = ref(true)
