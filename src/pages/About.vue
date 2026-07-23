@@ -5,13 +5,25 @@
         <div class="hello">Hello! 👋</div>
 
         <div class="hero-content">
-          <div class="avatar-card">
+          <div
+            class="avatar-card"
+            role="img"
+            :aria-label="`${profile.name} avatar carousel`"
+          >
             <div class="avatar-glow"></div>
-            <img
-              class="avatar-image"
-              src="../assets/avatar.png"
-              :alt="`${profile.name} avatar`"
+            <div
+              v-for="(avatar, index) in avatarImages"
+              :key="avatar"
+              class="avatar-slide"
+              :class="{ active: activeAvatarIndex === index }"
+              aria-hidden="true"
             >
+              <img
+                class="avatar-image"
+                :src="avatar"
+                alt=""
+              >
+            </div>
           </div>
 
           <div class="hero-info">
@@ -145,8 +157,14 @@
 
 
 <script setup>
-import { ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 import BaseIcon from '../components/common/BaseIcon.vue'
+import avatar01 from '../assets/avatar/avatar_01.png'
+import avatar02 from '../assets/avatar/avatar_02.png'
+import avatar03 from '../assets/avatar/avatar_03.png'
+import avatar04 from '../assets/avatar/avatar_04.png'
+import avatar05 from '../assets/avatar/avatar_05.png'
+import avatar06 from '../assets/avatar/avatar_06.png'
 import {
   profile,
   skills,
@@ -157,6 +175,26 @@ import {
 
 const toastText = ref('')
 const copiedLabel = ref('')
+const activeAvatarIndex = ref(0)
+const avatarImages = [
+  avatar01,
+  avatar02,
+  avatar03,
+  avatar04,
+  avatar05,
+  avatar06
+]
+let avatarTimer
+
+onMounted(() => {
+  avatarTimer = window.setInterval(() => {
+    activeAvatarIndex.value = (activeAvatarIndex.value + 1) % avatarImages.length
+  }, 3600)
+})
+
+onBeforeUnmount(() => {
+  window.clearInterval(avatarTimer)
+})
 
 const contactItems = [
   {
