@@ -1,21 +1,7 @@
 <template>
-  <div class="app-shell">
-    <Transition name="splash-fade">
-      <div v-if="isLoading" class="splash-screen">
-        <div class="splash-avatar">
-          <img :src="avatarImage" :alt="`${profile.name} avatar`">
-        </div>
-
-        <h1>请稍等</h1>
-        <p>My Portfolio</p>
-
-        <div class="splash-progress" aria-hidden="true">
-          <span></span>
-        </div>
-      </div>
-    </Transition>
-
+  <div class="app-shell" :class="{ 'immersive-shell': isImmersive }">
     <button
+      v-if="!isImmersive"
       class="theme-toggle"
       :class="{ dark: isDark }"
       type="button"
@@ -37,19 +23,19 @@
       </Transition>
     </RouterView>
 
-    <BottomNav />
+    <BottomNav v-if="!isImmersive" />
   </div>
 </template>
 
 <script setup>
-import { onMounted, ref, watch } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import BaseIcon from './components/common/BaseIcon.vue'
 import BottomNav from './components/common/BottomNav.vue'
-import { profile } from './data/resume'
-import avatarImage from './assets/avatar.png'
 
+const route = useRoute()
 const isDark = ref(false)
-const isLoading = ref(true)
+const isImmersive = computed(() => Boolean(route.meta.immersive))
 
 const applyTheme = (value) => {
   document.documentElement.classList.toggle('dark-theme', value)
@@ -64,10 +50,6 @@ onMounted(() => {
   const savedTheme = localStorage.getItem('resume-theme')
   isDark.value = savedTheme === 'dark'
   applyTheme(isDark.value)
-
-  window.setTimeout(() => {
-    isLoading.value = false
-  }, 1100)
 })
 
 watch(isDark, (value) => {

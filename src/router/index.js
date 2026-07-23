@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+import Welcome from '../pages/Welcome.vue'
+import Loading from '../pages/Loading.vue'
 import About from '../pages/About.vue'
 import Projects from '../pages/Projects.vue'
 import More from '../pages/More.vue'
@@ -7,7 +9,19 @@ import More from '../pages/More.vue'
 const routes = [
   {
     path: '/',
-    redirect: '/about'
+    name: 'Welcome',
+    component: Welcome,
+    meta: {
+      immersive: true
+    }
+  },
+  {
+    path: '/loading',
+    name: 'Loading',
+    component: Loading,
+    meta: {
+      immersive: true
+    }
   },
   {
     path: '/about',
