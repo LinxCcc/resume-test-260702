@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="description" content="个人作品集访问验证">
+    <link rel="icon" type="image/svg+xml" href="/login-assets/favicon.svg">
+    <title>Nice to meet you! 👋</title>
+    <style>
+      @font-face {
+        font-family: 'SignPainter Web';
+        src: url('/login-assets/signpainter-housescript.woff2') format('woff2');
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+      }
+
+      body {
+        margin: 0;
+        color: #071a3b;
+        font-family:
+          Inter,
+          -apple-system,
+          BlinkMacSystemFont,
+          'PingFang SC',
+          'Microsoft YaHei',
+          sans-serif;
+        background:
+          radial-gradient(circle at 17% 8%, rgba(99, 157, 255, 0.2), transparent 27%),
+          radial-gradient(circle at 88% 75%, rgba(130, 183, 255, 0.16), transparent 28%),
+          linear-gradient(145deg, #fafdff 0%, #f3f7ff 47%, #edf4ff 100%);
+      }
+
+      button,
+      input {
+        font: inherit;
+      }
+
+      .welcome-page {
+        position: relative;
+        min-height: 100svh;
+        overflow: hidden;
+      }
+
+      .welcome-page::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image:
+          linear-gradient(rgba(86, 135, 211, 0.035) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(86, 135, 211, 0.035) 1px, transparent 1px);
+        background-size: 52px 52px;
+        mask-image: linear-gradient(90deg, transparent, #000 34%, #000 66%, transparent);
+      }
+
+      .welcome-orb {
+        position: absolute;
+        bottom: -130px;
+        left: -96px;
+        width: 230px;
+        height: 230px;
+        border: 1px solid rgba(102, 156, 241, 0.18);
+        border-radius: 42%;
+        background: rgba(208, 227, 255, 0.2);
+        transform: rotate(28deg);
+      }
+
+      .welcome-layout {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-areas: 'visual' 'content';
+        align-content: center;
+        width: min(100%, 1180px);
+        min-height: 100svh;
+        margin: 0 auto;
+      }
+
+      .welcome-visual {
+        position: relative;
+        grid-area: visual;
+        width: min(100%, 480px);
+        height: clamp(290px, 38svh, 350px);
+        margin: 0 auto;
+      }
+
+      .welcome-avatar {
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        z-index: 2;
+        width: min(60vw, 258px);
+        height: calc(100% - 12px);
+        object-fit: contain;
+        object-position: center bottom;
+        filter: drop-shadow(0 23px 26px rgba(31, 77, 153, 0.16));
+        transform: translateX(-50%);
+        animation: avatar-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+
+      .dot-grid {
+        position: absolute;
+        top: 76px;
+        left: 16px;
+        width: 100px;
+        height: 84px;
+        opacity: 0.5;
+        background-image: radial-gradient(circle, #aacbff 2px, transparent 2.5px);
+        background-size: 18px 18px;
+      }
+
+      .spark {
+        position: absolute;
+        z-index: 4;
+        color: #77a9ff;
+        line-height: 1;
+        animation: sparkle 2.8s ease-in-out infinite;
+      }
+
+      .spark-one {
+        top: 92px;
+        right: 32px;
+        font-size: 34px;
+      }
+
+      .spark-two {
+        right: 62px;
+        bottom: 28px;
+        font-size: 18px;
+        animation-delay: 0.8s;
+      }
+
+      .welcome-content {
+        position: relative;
+        z-index: 5;
+        grid-area: content;
+        width: min(100%, 580px);
+        margin: -34px auto 0;
+        padding: 0 24px calc(34px + env(safe-area-inset-bottom));
+        text-align: center;
+        animation: content-in 0.62s ease 0.12s both;
+      }
+
+      .eyebrow {
+        display: none;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 18px;
+        color: #3f79d6;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 2px;
+      }
+
+      .eyebrow span {
+        width: 28px;
+        height: 2px;
+        border-radius: 99px;
+        background: #347ff1;
+      }
+
+      .heading {
+        position: relative;
+      }
+
+      .heading p {
+        position: absolute;
+        top: -32px;
+        left: 50%;
+        margin: 0;
+        color: rgba(88, 137, 215, 0.12);
+        font-family: Baskerville, 'Iowan Old Style', 'Times New Roman', serif;
+        font-size: clamp(62px, 18vw, 86px);
+        font-style: italic;
+        line-height: 1;
+        letter-spacing: -0.04em;
+        transform: translateX(-50%);
+      }
+
+      .heading h1 {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        color: #102c56;
+        font-family: 'SignPainter Web', 'Apple Chancery', cursive;
+        font-size: clamp(34px, 9vw, 46px);
+        font-weight: 400;
+        line-height: 1.2;
+      }
+
+      .divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        height: 7px;
+        margin: 20px 0 23px;
+      }
+
+      .divider span {
+        width: 42px;
+        height: 5px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #347ef1, #80aeff);
+      }
+
+      .divider i {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #96bcff;
+      }
+
+      .intro {
+        margin: 0;
+        color: #8997ad;
+        font-size: 14px;
+        line-height: 1.85;
+      }
+
+      .invite-form {
+        width: min(100%, 520px);
+        margin: 26px auto 0;
+      }
+
+      .invite-field {
+        display: grid;
+        grid-template-columns: 30px 1fr 40px;
+        gap: 12px;
+        align-items: center;
+        height: 64px;
+        padding: 0 12px 0 20px;
+        border: 1px solid #d6e0ef;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.78);
+        box-shadow: 0 12px 28px rgba(48, 99, 180, 0.06);
+        backdrop-filter: blur(14px);
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .invite-field:focus-within {
+        border-color: #5b99fa;
+        box-shadow: 0 0 0 4px rgba(52, 126, 241, 0.1);
+      }
+
+      .invite-field.invalid {
+        border-color: #e98989;
+        box-shadow: 0 0 0 4px rgba(221, 82, 82, 0.08);
+      }
+
+      .lock-icon {
+        width: 26px;
+        height: 26px;
+        opacity: 0.92;
+      }
+
+      .invite-field input {
+        width: 100%;
+        min-width: 0;
+        border: 0;
+        outline: 0;
+        color: #18345d;
+        font-size: 16px;
+        font-weight: 650;
+        background: transparent;
+      }
+
+      .invite-field input::placeholder {
+        color: #a5b1c5;
+        font-weight: 500;
+      }
+
+      .password-toggle {
+        display: grid;
+        width: 40px;
+        height: 40px;
+        place-items: center;
+        border: 0;
+        border-radius: 12px;
+        color: #7185a4;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      .password-toggle:hover {
+        background: #eef4ff;
+      }
+
+      .invite-error {
+        min-height: 18px;
+        margin: 8px 4px 0;
+        color: #d84d4d;
+        font-size: 12px;
+        text-align: left;
+      }
+
+      .enter-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        width: 100%;
+        height: 66px;
+        margin-top: 8px;
+        border: 0;
+        border-radius: 20px;
+        color: #fff;
+        font-size: 19px;
+        font-weight: 850;
+        background: linear-gradient(105deg, #5b94f6 0%, #347ef1 54%, #1465e9 100%);
+        box-shadow: 0 18px 36px rgba(28, 104, 229, 0.25);
+        cursor: pointer;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+
+      .enter-button:disabled {
+        cursor: wait;
+        opacity: 0.68;
+      }
+
+      .enter-button:not(:disabled):active {
+        transform: translateY(2px) scale(0.99);
+      }
+
+      .arrow {
+        font-size: 27px;
+        font-weight: 400;
+      }
+
+      .security {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 0;
+        color: #9ba9bd;
+        font-size: 12px;
+      }
+
+      .security span {
+        display: grid;
+        width: 18px;
+        height: 20px;
+        place-items: center;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 900;
+        background: #b8c7dc;
+        clip-path: polygon(50% 0, 90% 16%, 84% 72%, 50% 100%, 16% 72%, 10% 16%);
+      }
+
+      .filing {
+        display: __ICP_VISIBILITY__;
+        justify-content: center;
+        margin-top: 18px;
+        color: #9ba9bd;
+        font-size: 12px;
+      }
+
+      .filing a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      @keyframes avatar-in {
+        from { opacity: 0; transform: translateX(-50%) translateY(18px) scale(0.94); }
+        to { opacity: 1; transform: translateX(-50%) scale(1); }
+      }
+
+      @keyframes content-in {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes sparkle {
+        0%, 100% { opacity: 0.45; transform: scale(0.86); }
+        50% { opacity: 1; transform: scale(1.12) rotate(10deg); }
+      }
+
+      @media (min-width: 960px) {
+        .welcome-layout {
+          grid-template-areas: 'content visual';
+          grid-template-columns: minmax(380px, 0.94fr) minmax(360px, 1.06fr);
+          gap: clamp(18px, 3vw, 44px);
+          align-items: center;
+          padding: 48px clamp(34px, 6vw, 76px);
+        }
+
+        .welcome-visual {
+          width: 100%;
+          height: min(72svh, 700px);
+          min-height: 540px;
+        }
+
+        .welcome-avatar {
+          top: calc(40% - 52px);
+          left: 46%;
+          width: min(30vw, 350px);
+          height: min(55svh, 500px);
+          transform: translate(-50%, -50%);
+        }
+
+        .dot-grid {
+          top: 12%;
+          left: -2%;
+          width: 136px;
+          height: 118px;
+        }
+
+        .spark-one {
+          top: 20%;
+          right: 2%;
+          font-size: 44px;
+        }
+
+        .spark-two {
+          right: 10%;
+          bottom: 17%;
+          font-size: 24px;
+        }
+
+        .welcome-content {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          text-align: left;
+        }
+
+        .eyebrow {
+          display: flex;
+        }
+
+        .heading p {
+          top: -50px;
+          left: -8px;
+          font-size: clamp(74px, 8vw, 108px);
+          transform: none;
+        }
+
+        .heading h1 {
+          font-size: clamp(46px, 5vw, 62px);
+        }
+
+        .divider {
+          justify-content: flex-start;
+          margin: 26px 0 28px;
+        }
+
+        .intro {
+          max-width: 520px;
+          font-size: 15px;
+        }
+
+        .invite-form {
+          margin: 32px 0 0;
+        }
+
+        .invite-field,
+        .enter-button {
+          height: 68px;
+          border-radius: 22px;
+        }
+
+        .security {
+          justify-content: flex-start;
+          margin-top: 24px;
+          font-size: 13px;
+        }
+
+        .filing {
+          justify-content: flex-start;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .welcome-visual {
+          height: clamp(250px, 34svh, 276px);
+        }
+
+        .welcome-content {
+          margin-top: -28px;
+          padding-inline: 18px;
+        }
+
+        .invite-field,
+        .enter-button {
+          height: 58px;
+          border-radius: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="welcome-page">
+      <div class="welcome-orb" aria-hidden="true"></div>
+      <section class="welcome-layout">
+        <div class="welcome-visual" aria-hidden="true">
+          <div class="dot-grid"></div>
+          <span class="spark spark-one">✦</span>
+          <span class="spark spark-two">✦</span>
+          <img class="welcome-avatar" src="/login-assets/avatar.png" alt="">
+        </div>
+
+        <div class="welcome-content">
+          <div class="eyebrow"><span></span>HELLO, NICE TO MEET YOU</div>
+          <div class="heading">
+            <p>Welcome</p>
+            <h1>Nice to meet you! 👋</h1>
+          </div>
+          <div class="divider" aria-hidden="true"><span></span><i></i></div>
+          <p class="intro">这是一个由我与 AI 共同完成的个人网站，很高兴在此遇见你。为保护个人隐私，请输入邀请码后继续访问。Thank you for your time！</p>
+
+          <form id="invite-form" class="invite-form" novalidate>
+            <label id="invite-field" class="invite-field">
+              <img class="lock-icon" src="/login-assets/lock.svg" alt="" aria-hidden="true">
+              <input
+                id="password"
+                type="password"
+                name="password"
+                autocomplete="current-password"
+                placeholder="请输入邀请码"
+                aria-describedby="invite-error"
+                required
+              >
+              <button
+                id="password-toggle"
+                class="password-toggle"
+                type="button"
+                aria-label="显示邀请码"
+              >👁</button>
+            </label>
+            <p id="invite-error" class="invite-error" role="alert"></p>
+            <button id="submit-button" class="enter-button" type="submit">
+              <span id="submit-label">进入我的空间</span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </button>
+          </form>
+
+          <p class="security"><span aria-hidden="true">✓</span>专属邀请制 · 保护隐私，安全访问</p>
+          <p class="filing">
+            <a href="https://beian.miit.gov.cn/" rel="noreferrer" target="_blank">__ICP_NUMBER__</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script nonce="__SCRIPT_NONCE__">
+      const form = document.querySelector('#invite-form')
+      const field = document.querySelector('#invite-field')
+      const passwordInput = document.querySelector('#password')
+      const passwordToggle = document.querySelector('#password-toggle')
+      const errorMessage = document.querySelector('#invite-error')
+      const submitButton = document.querySelector('#submit-button')
+      const submitLabel = document.querySelector('#submit-label')
+
+      passwordToggle.addEventListener('click', () => {
+        const shouldShow = passwordInput.type === 'password'
+        passwordInput.type = shouldShow ? 'text' : 'password'
+        passwordToggle.setAttribute('aria-label', shouldShow ? '隐藏邀请码' : '显示邀请码')
+      })
+
+      passwordInput.addEventListener('input', () => {
+        errorMessage.textContent = ''
+        field.classList.remove('invalid')
+      })
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault()
+
+        if (!passwordInput.value) {
+          errorMessage.textContent = '请先输入邀请码'
+          field.classList.add('invalid')
+          passwordInput.focus()
+          return
+        }
+
+        submitButton.disabled = true
+        submitLabel.textContent = '正在验证'
+
+        try {
+          const response = await fetch('/api/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'same-origin',
+            body: JSON.stringify({
+              password: passwordInput.value,
+              returnTo: new URLSearchParams(window.location.search).get('returnTo')
+            })
+          })
+          const result = await response.json()
+
+          if (!response.ok) {
+            throw new Error(result.message || '验证失败，请稍后重试。')
+          }
+
+          passwordInput.value = ''
+          window.location.replace(result.redirectTo || '/loading')
+        } catch (error) {
+          errorMessage.textContent = error.message
+          field.classList.add('invalid')
+          passwordInput.focus()
+        } finally {
+          submitButton.disabled = false
+          submitLabel.textContent = '进入我的空间'
+        }
+      })
+    </script>
+  </body>
+</html>

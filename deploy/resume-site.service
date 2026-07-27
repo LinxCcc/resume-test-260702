@@ -1,0 +1,21 @@
+[Unit]
+Description=Private resume website
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/resume/current
+EnvironmentFile=/etc/resume-site/resume-site.env
+ExecStart=/usr/bin/node /var/www/resume/current/server/index.mjs
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadOnlyPaths=/var/www/resume/current
+
+[Install]
+WantedBy=multi-user.target

@@ -1,20 +1,26 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import Welcome from '../pages/Welcome.vue'
 import Loading from '../pages/Loading.vue'
 import About from '../pages/About.vue'
 import Projects from '../pages/Projects.vue'
 import More from '../pages/More.vue'
 
-const routes = [
-  {
-    path: '/',
-    name: 'Welcome',
-    component: Welcome,
-    meta: {
-      immersive: true
+const entryRoute = import.meta.env.DEV
+  ? {
+      path: '/',
+      name: 'Welcome',
+      component: () => import('../pages/Welcome.vue'),
+      meta: {
+        immersive: true
+      }
     }
-  },
+  : {
+      path: '/',
+      redirect: '/about'
+    }
+
+const routes = [
+  entryRoute,
   {
     path: '/loading',
     name: 'Loading',

@@ -5,8 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/prepare-worker.mjs",
-    "preview": "vite preview"
+    "build": "vite build --outDir dist/client && node scripts/prepare-server.mjs",
+    "preview": "vite preview",
+    "start": "node dist/server/index.mjs",
+    "password:hash": "node scripts/hash-password.mjs",
+    "test:auth": "node scripts/test-auth.mjs"
   },
   "dependencies": {
     "vue": "^3.5.39",
