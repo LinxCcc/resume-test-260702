@@ -3789,19 +3789,20 @@ img {
   width: min(100%, 1180px);
   min-height: 100svh;
   margin: 0 auto;
+  align-content: center;
 }
 
 .welcome-visual {
   position: relative;
   grid-area: visual;
   width: min(100%, 480px);
-  height: clamp(305px, 43svh, 410px);
+  height: clamp(290px, 38svh, 350px);
   margin: 0 auto;
 }
 
 .welcome-avatar {
   position: absolute;
-  top: 19px;
+  top: -10px;
   left: 50%;
   z-index: 2;
   width: min(60vw, 258px);
@@ -3849,9 +3850,9 @@ img {
   position: relative;
   z-index: 5;
   grid-area: content;
-  align-self: center;
+  align-self: start;
   width: min(100%, 580px);
-  margin: -26px auto 0;
+  margin: -34px auto 0;
   padding: 0 24px calc(34px + env(safe-area-inset-bottom));
   text-align: center;
   animation: welcome-content-in 0.62s ease 0.12s both;
@@ -3985,37 +3986,12 @@ img {
   box-shadow: 0 0 0 4px rgba(221, 82, 82, 0.08);
 }
 
-.ticket-icon {
-  position: relative;
-  width: 28px;
-  height: 20px;
-  border: 2px solid #4f8ff5;
-  border-radius: 6px;
-  background: rgba(79, 143, 245, 0.04);
-}
-
-.ticket-icon::before,
-.ticket-icon::after {
-  content: '';
-  position: absolute;
-}
-
-.ticket-icon::before {
-  top: 3px;
-  right: 7px;
-  bottom: 3px;
-  border-left: 1.5px dashed rgba(79, 143, 245, 0.72);
-}
-
-.ticket-icon::after {
-  top: 50%;
-  left: 6px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #4f8ff5;
-  box-shadow: 0 0 0 3px rgba(79, 143, 245, 0.1);
-  transform: translateY(-50%);
+.access-lock-icon {
+  display: block;
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  opacity: 0.92;
 }
 
 .invite-field input {
@@ -4247,11 +4223,11 @@ img {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 960px) {
   .welcome-layout {
     grid-template-areas: 'content visual';
     grid-template-columns: minmax(380px, 0.94fr) minmax(360px, 1.06fr);
-    gap: clamp(24px, 5vw, 76px);
+    gap: clamp(18px, 3vw, 44px);
     align-items: center;
     padding: 48px clamp(34px, 6vw, 76px);
   }
@@ -4263,7 +4239,8 @@ img {
   }
 
   .welcome-avatar {
-    top: 40%;
+    top: calc(40% - 52px);
+    left: 46%;
     width: min(30vw, 350px);
     height: min(55svh, 500px);
     transform: translate(-50%, -50%);
@@ -4290,6 +4267,7 @@ img {
   }
 
   .welcome-content {
+    align-self: center;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -4353,14 +4331,15 @@ img {
 
 @media (max-width: 380px) {
   .welcome-visual {
-    height: 285px;
+    height: clamp(250px, 34svh, 276px);
   }
 
   .welcome-avatar {
-    top: 10px;
+    top: -12px;
   }
 
   .welcome-content {
+    margin-top: -28px;
     padding-right: 18px;
     padding-left: 18px;
   }

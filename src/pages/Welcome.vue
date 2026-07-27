@@ -30,7 +30,7 @@
 
         <form class="invite-form" novalidate @submit.prevent="enterSite">
           <label class="invite-field" :class="{ invalid: errorMessage }">
-            <span class="ticket-icon" aria-hidden="true"></span>
+            <img class="access-lock-icon" :src="lockIcon" alt="" aria-hidden="true">
             <span class="sr-only">邀请码</span>
             <input
               ref="inviteInput"
@@ -69,6 +69,7 @@
 import { nextTick, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import avatarImage from '../assets/avatar_welcome.png'
+import lockIcon from '../assets/lock.svg'
 
 const router = useRouter()
 const inviteCode = ref('')
