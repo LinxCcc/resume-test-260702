@@ -3134,20 +3134,6 @@ img {
   .profile-rail .hero-info h1 {
     font-size: clamp(34px, 3.2vw, 39px);
     letter-spacing: -1.4px;
-    text-shadow: 0 2px 18px rgba(255, 255, 255, 0.48);
-  }
-
-  .profile-rail .role-tags {
-    gap: 9px;
-    margin: 12px 0 14px;
-  }
-
-  .profile-rail .role-pill {
-    padding: 7px 14px;
-    border: 1px solid rgba(255, 255, 255, 0.56);
-    font-size: 13px;
-    background: rgba(220, 233, 255, 0.72);
-    backdrop-filter: blur(10px);
   }
 
   .profile-rail .tagline {
