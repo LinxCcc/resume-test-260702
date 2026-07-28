@@ -259,6 +259,33 @@
         box-shadow: 0 0 0 4px rgba(221, 82, 82, 0.08);
       }
 
+      .toast {
+        position: fixed;
+        top: calc(24px + env(safe-area-inset-top));
+        left: 50%;
+        z-index: 300;
+        width: min(calc(100% - 32px), 420px);
+        padding: 13px 18px;
+        border: 1px solid rgba(209, 66, 66, 0.18);
+        border-radius: 14px;
+        color: #a82929;
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: center;
+        background: rgba(255, 245, 245, 0.96);
+        box-shadow: 0 16px 40px rgba(122, 36, 36, 0.16);
+        opacity: 0;
+        pointer-events: none;
+        transform: translate(-50%, -12px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        backdrop-filter: blur(14px);
+      }
+
+      .toast.visible {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+
       .lock-icon {
         width: 26px;
         height: 26px;
@@ -502,6 +529,7 @@
     </style>
   </head>
   <body>
+    <div id="toast" class="toast" role="status" aria-live="assertive"></div>
     <main class="welcome-page">
       <div class="welcome-orb" aria-hidden="true"></div>
       <section class="welcome-layout">
@@ -563,6 +591,17 @@
       const errorMessage = document.querySelector('#invite-error')
       const submitButton = document.querySelector('#submit-button')
       const submitLabel = document.querySelector('#submit-label')
+      const toast = document.querySelector('#toast')
+      let toastTimer
+
+      const showToast = (message) => {
+        window.clearTimeout(toastTimer)
+        toast.textContent = message
+        toast.classList.add('visible')
+        toastTimer = window.setTimeout(() => {
+          toast.classList.remove('visible')
+        }, 4200)
+      }
 
       passwordToggle.addEventListener('click', () => {
         const shouldShow = passwordInput.type === 'password'
@@ -598,10 +637,22 @@
               returnTo: new URLSearchParams(window.location.search).get('returnTo')
             })
           })
-          const result = await response.json()
+          const contentType = response.headers.get('content-type') || ''
+          const result = contentType.includes('application/json')
+            ? await response.json()
+            : {}
 
           if (!response.ok) {
-            throw new Error(result.message || '验证失败，请稍后重试。')
+            const message = result.message || (
+              response.status === 429
+                ? '请求过于频繁，请稍后再试。'
+                : '验证失败，请稍后重试。'
+            )
+
+            if (response.status === 429) {
+              showToast(message)
+            }
+            throw new Error(message)
           }
 
           passwordInput.value = ''

@@ -13,7 +13,8 @@ Nginx on a private Linux server.
   to the repository or browser storage.
 - Sessions are signed, expire automatically, and are invalidated when the
   shared password changes.
-- Repeated failed login attempts are rate-limited in both the app and Nginx.
+- Ten failed login attempts within ten minutes trigger a thirty-minute block;
+  the login endpoint is also rate-limited by Nginx.
 
 ## Local commands
 

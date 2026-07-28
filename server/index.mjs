@@ -56,7 +56,7 @@ const contentTypes = new Map([
 const loginAttempts = new Map()
 const attemptWindowMs = 10 * 60 * 1000
 const blockDurationMs = 30 * 60 * 1000
-const maximumFailures = 5
+const maximumFailures = 10
 
 const escapeHtml = (value) =>
   value.replace(/[&<>"']/g, (character) => {
@@ -140,7 +140,15 @@ const getAttemptState = (ipAddress) => {
   const now = Date.now()
   const current = loginAttempts.get(ipAddress)
 
-  if (!current || current.windowStartedAt + attemptWindowMs < now) {
+  if (current?.blockedUntil > now) {
+    return current
+  }
+
+  if (
+    !current ||
+    current.blockedUntil > 0 ||
+    current.windowStartedAt + attemptWindowMs < now
+  ) {
     const freshState = {
       blockedUntil: 0,
       failures: 0,
@@ -160,6 +168,8 @@ const recordFailedAttempt = (ipAddress) => {
   if (state.failures >= maximumFailures) {
     state.blockedUntil = Date.now() + blockDurationMs
   }
+
+  return state
 }
 
 const clearAttempts = (ipAddress) => {
@@ -347,10 +357,17 @@ const handleLogin = async (request, response) => {
     )
 
     if (!passwordMatches) {
-      recordFailedAttempt(ipAddress)
-      sendJson(response, 401, {
-        message: '邀请码不正确，请重新输入。'
-      })
+      const failedState = recordFailedAttempt(ipAddress)
+
+      if (failedState.blockedUntil > Date.now()) {
+        sendJson(response, 429, {
+          message: '错误次数已达上限，请30分钟后再试。'
+        })
+      } else {
+        sendJson(response, 401, {
+          message: '邀请码不正确，请重新输入。'
+        })
+      }
       return
     }
 
