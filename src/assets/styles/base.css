@@ -3786,6 +3786,42 @@ img {
   border: 0;
 }
 
+.site-footer {
+  position: relative;
+  z-index: 3;
+  margin: 34px 0 8px;
+  text-align: center;
+}
+
+.site-footer a {
+  color: #9aa7ba;
+  font-size: 11px;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.site-footer a:hover {
+  color: var(--blue);
+}
+
+.site-footer-welcome {
+  position: absolute;
+  right: 20px;
+  bottom: calc(12px + env(safe-area-inset-bottom));
+  left: 20px;
+  z-index: 8;
+  margin: 0;
+}
+
+.site-footer-welcome a {
+  color: #a4afbf;
+}
+
+.dark-theme .site-footer a {
+  color: #758198;
+}
+
 .app-shell.immersive-shell {
   width: 100%;
   max-width: none;
@@ -4154,26 +4190,21 @@ img {
   transform: translateX(5px);
 }
 
-.welcome-security {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin: 22px 0 0;
-  color: #9ba9bd;
-  font-size: 12px;
+.welcome-project-link {
+  display: inline-block;
+  margin: 30px 0 0;
+  color: #5879a8;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
-.welcome-security span {
-  display: grid;
-  place-items: center;
-  width: 18px;
-  height: 20px;
-  color: #ffffff;
-  font-size: 10px;
-  font-weight: 900;
-  background: #b8c7dc;
-  clip-path: polygon(50% 0, 90% 16%, 84% 72%, 50% 100%, 16% 72%, 10% 16%);
+.welcome-project-link:hover {
+  color: #347ef1;
+  transform: translateY(-1px);
 }
 
 .loading-page {
@@ -4406,10 +4437,9 @@ img {
     border-radius: 22px;
   }
 
-  .welcome-security {
-    justify-content: flex-start;
-    margin-top: 24px;
-    font-size: 13px;
+  .welcome-project-link {
+    margin-top: 32px;
+    font-size: 15px;
   }
 }
 
@@ -4454,8 +4484,8 @@ img {
     border-radius: 18px;
   }
 
-  .welcome-security {
-    margin-top: 17px;
+  .welcome-project-link {
+    margin-top: 25px;
   }
 }
 

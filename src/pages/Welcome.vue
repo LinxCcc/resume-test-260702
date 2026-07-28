@@ -64,12 +64,18 @@
           </button>
         </form>
 
-        <p class="welcome-security">
-          <span aria-hidden="true">✓</span>
-          本地预览模式 · 正式发布后由服务器验证
-        </p>
+        <a
+          class="welcome-project-link"
+          href="https://my.feishu.cn/docx/FMbGdLzuOoQGcmxRz4rcjD29nLh?from=from_copylink"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          🍟 关于本项目的介绍 🍣
+        </a>
       </div>
     </section>
+
+    <SiteFooter welcome />
   </main>
 </template>
 
@@ -77,6 +83,7 @@
 import { nextTick, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import BaseIcon from '../components/common/BaseIcon.vue'
+import SiteFooter from '../components/common/SiteFooter.vue'
 import avatarImage from '../assets/avatar_welcome.png'
 import lockIcon from '../assets/lock.svg'
 

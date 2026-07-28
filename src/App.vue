@@ -37,6 +37,7 @@
       </Transition>
     </RouterView>
 
+    <SiteFooter v-if="!isImmersive" />
     <BottomNav v-if="!isImmersive" />
   </div>
 </template>
@@ -46,6 +47,7 @@ import { computed, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import BaseIcon from './components/common/BaseIcon.vue'
 import BottomNav from './components/common/BottomNav.vue'
+import SiteFooter from './components/common/SiteFooter.vue'
 
 const route = useRoute()
 const isDark = ref(false)
