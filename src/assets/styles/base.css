@@ -3957,24 +3957,6 @@ img {
   animation: welcome-content-in 0.62s ease 0.12s both;
 }
 
-.welcome-eyebrow {
-  display: none;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 18px;
-  color: #3f79d6;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
-}
-
-.welcome-eyebrow span {
-  width: 28px;
-  height: 2px;
-  border-radius: 99px;
-  background: #347ff1;
-}
-
 .welcome-heading {
   position: relative;
 }
@@ -4401,10 +4383,6 @@ img {
     text-align: left;
   }
 
-  .welcome-eyebrow {
-    display: flex;
-  }
-
   .welcome-heading p {
     top: -50px;
     left: -8px;
@@ -4438,8 +4416,11 @@ img {
   }
 
   .welcome-project-link {
+    display: block;
+    width: min(100%, 520px);
     margin-top: 32px;
     font-size: 15px;
+    text-align: center;
   }
 }
 

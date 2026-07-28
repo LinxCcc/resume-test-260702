@@ -11,11 +11,6 @@
       </div>
 
       <div class="welcome-content">
-        <div class="welcome-eyebrow">
-          <span></span>
-          HELLO, NICE TO MEET YOU
-        </div>
-
         <div class="welcome-heading">
           <p>Welcome</p>
           <h1>Nice to meet you! 👋</h1>
