@@ -24,10 +24,18 @@ const loginPage = await fetch(`${baseUrl}/login`, {
   redirect: 'manual'
 })
 check(loginPage.status === 200, '公开登录页可以访问')
+const loginPageMarkup = await loginPage.text()
 check(
-  (await loginPage.text()).includes('id="invite-form"'),
+  loginPageMarkup.includes('id="invite-form"'),
   '登录页包含邀请码表单'
 )
+check(
+  loginPageMarkup.includes('/login-assets/welcome.css'),
+  '登录页加载共享欢迎页样式'
+)
+
+const welcomeStyles = await fetch(`${baseUrl}/login-assets/welcome.css`)
+check(welcomeStyles.status === 200, '共享欢迎页样式可以公开加载')
 
 const protectedPage = await fetch(`${baseUrl}/about`, {
   headers: { Accept: 'text/html' },

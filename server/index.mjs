@@ -235,7 +235,7 @@ const sendLoginPage = (response) => {
   const renderedPage = loginTemplate
     .replaceAll('__SCRIPT_NONCE__', nonce)
     .replaceAll('__ICP_NUMBER__', escapeHtml(icpNumber))
-    .replaceAll('__ICP_VISIBILITY__', icpNumber ? 'flex' : 'none')
+    .replaceAll('__ICP_VISIBILITY__', icpNumber ? 'block' : 'none')
 
   setCommonHeaders(
     response,

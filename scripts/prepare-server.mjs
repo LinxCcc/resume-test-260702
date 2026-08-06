@@ -1,4 +1,4 @@
-import { copyFile, mkdir, rm } from 'node:fs/promises'
+import { copyFile, mkdir, readFile, rm, writeFile } from 'node:fs/promises'
 
 const projectRoot = new URL('../', import.meta.url)
 const serverOutput = new URL('../dist/server/', import.meta.url)
@@ -6,6 +6,27 @@ const publicOutput = new URL('../dist/server/public/', import.meta.url)
 
 await rm(serverOutput, { force: true, recursive: true })
 await mkdir(publicOutput, { recursive: true })
+
+const sourceStyles = await readFile(
+  new URL('src/assets/styles/base.css', projectRoot),
+  'utf8'
+)
+const welcomeStylesStart = sourceStyles.indexOf(
+  '/* Welcome and loading flow */'
+)
+const welcomeStylesEnd = sourceStyles.indexOf(
+  '/* Floating utility actions */'
+)
+
+if (welcomeStylesStart < 0 || welcomeStylesEnd <= welcomeStylesStart) {
+  throw new Error('Unable to locate the shared welcome styles in base.css')
+}
+
+await writeFile(
+  new URL('welcome.css', publicOutput),
+  sourceStyles.slice(welcomeStylesStart, welcomeStylesEnd),
+  'utf8'
+)
 
 const serverFiles = [
   'index.mjs',
