@@ -19,5 +19,5 @@ defineProps({
 })
 
 const icpNumber = import.meta.env.VITE_ICP_NUMBER
-  || (import.meta.env.DEV ? '粤ICP备XXXXXXXX号-1' : '')
+  || '沪ICP备2026037911号-1'
 </script>

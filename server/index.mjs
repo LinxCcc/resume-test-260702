@@ -28,7 +28,7 @@ const passwordVersion = process.env.PASSWORD_VERSION || '1'
 const sessionTtlSeconds = Number(process.env.SESSION_TTL_SECONDS || 43200)
 const cookieSecure = process.env.COOKIE_SECURE !== 'false'
 const trustProxy = process.env.TRUST_PROXY === 'true'
-const icpNumber = process.env.ICP_NUMBER || ''
+const icpNumber = process.env.ICP_NUMBER || '沪ICP备2026037911号-1'
 const cookieName = 'resume_session'
 
 if (!accessPasswordHash) {
